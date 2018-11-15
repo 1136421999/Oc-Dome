@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIButtonExtensionViewController" customModule="LHWDome" customModuleProvider="target">
+            <connections>
+                <outlet property="button" destination="LlH-kM-2xQ" id="19X-4O-LDd"/>
+                <outlet property="button1" destination="MqM-8r-srB" id="tTf-Xy-c8u"/>
+                <outlet property="button2" destination="fAh-2l-nEJ" id="eul-1K-ceq"/>
+                <outlet property="button3" destination="MYr-O6-Ss7" id="rGe-Cn-Ddp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MqM-8r-srB">
+                    <rect key="frame" x="137.5" y="190" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="IZE-yn-i3u"/>
+                        <constraint firstAttribute="width" constant="100" id="tm7-rE-IHe"/>
+                    </constraints>
+                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Button" image="二维码分享icon.png">
+                        <color key="titleColor" red="0.99215686270000003" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlH-kM-2xQ">
+                    <rect key="frame" x="137.5" y="120" width="100" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="OZG-qj-JpN"/>
+                        <constraint firstAttribute="height" constant="50" id="gTT-Wb-gbH"/>
+                    </constraints>
+                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Button" image="二维码分享icon.png">
+                        <color key="titleColor" red="0.99215686270000003" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAh-2l-nEJ">
+                    <rect key="frame" x="137.5" y="240" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="EGi-iU-xWB"/>
+                        <constraint firstAttribute="width" constant="100" id="Xzv-rW-5Ak"/>
+                    </constraints>
+                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Button" image="二维码分享icon.png">
+                        <color key="titleColor" red="0.99215686270000003" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYr-O6-Ss7">
+                    <rect key="frame" x="137.5" y="290" width="100" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="KGJ-Uu-UIk"/>
+                        <constraint firstAttribute="height" constant="50" id="mCA-ta-LST"/>
+                    </constraints>
+                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Button" image="二维码分享icon.png">
+                        <color key="titleColor" red="0.99215686270000003" green="0.062745098040000002" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Zi-aa-MYn">
+                    <rect key="frame" x="147.5" y="370" width="80" height="30"/>
+                    <color key="backgroundColor" red="0.98823529409999999" green="0.37647058820000001" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="t9N-37-yrt"/>
+                        <constraint firstAttribute="height" constant="30" id="xGA-uB-N3p"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <state key="normal" title="获取验证码">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonClick:" destination="-1" eventType="touchUpInside" id="zdR-rB-jue"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9Zi-aa-MYn" firstAttribute="top" secondItem="MYr-O6-Ss7" secondAttribute="bottom" constant="30" id="0Uo-xZ-HT4"/>
+                <constraint firstItem="MqM-8r-srB" firstAttribute="top" secondItem="LlH-kM-2xQ" secondAttribute="bottom" constant="20" id="C7Q-jT-o0y"/>
+                <constraint firstItem="MYr-O6-Ss7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Kfu-Fi-nr2"/>
+                <constraint firstItem="9Zi-aa-MYn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="N6c-Nr-j78"/>
+                <constraint firstItem="fAh-2l-nEJ" firstAttribute="top" secondItem="MqM-8r-srB" secondAttribute="bottom" constant="20" id="NF3-Qh-NHa"/>
+                <constraint firstItem="fAh-2l-nEJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ohh-bg-lhH"/>
+                <constraint firstItem="LlH-kM-2xQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TiS-V7-6Nd"/>
+                <constraint firstItem="LlH-kM-2xQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="ZSm-Mv-J20"/>
+                <constraint firstItem="MqM-8r-srB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hS8-T0-b8v"/>
+                <constraint firstItem="MYr-O6-Ss7" firstAttribute="top" secondItem="fAh-2l-nEJ" secondAttribute="bottom" constant="20" id="y5m-eN-AcL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="二维码分享icon.png" width="20" height="20"/>
+    </resources>
+</document>

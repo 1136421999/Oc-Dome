@@ -1,0 +1,11 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'LHWDome' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+  pod 'Alamofire'                      #网络请求
+pod 'HandyJSON', '~> 4.1.1'          #模型
+pod 'Kingfisher'                     #图片请求类
+pod 'MJRefresh'                      #刷新类
+end
