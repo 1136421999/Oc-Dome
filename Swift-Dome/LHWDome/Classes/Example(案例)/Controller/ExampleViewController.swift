@@ -10,7 +10,7 @@ import UIKit
 
 class ExampleViewController: HWBaseTableViewController {
 
-    let titles = ["UITextField扩展","富文本扩展","按钮扩展","UILabel扩展"]
+    let titles = ["UITextField扩展","富文本扩展","按钮扩展","UILabel扩展", "自定义遮盖"]
     override func viewDidLoad() {
         super.viewDidLoad()
         setBGColor()
@@ -48,6 +48,11 @@ class ExampleViewController: HWBaseTableViewController {
             pushController(name: "NSMutableAttributedStringExtensionViewController")
         } else if title == "按钮扩展" {
             pushController(name: "UIButtonExtensionViewController")
+        } else if title == "自定义遮盖" {
+            pushController(name: "HWCoverWindowViewController")
+        } else if title == "UILabel扩展" {
+            pushController(name: "UILabelExtensionViewController")
         }
+        
     }
 }

@@ -47,6 +47,12 @@
 		83394535214A334D00DBD47D /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83394534214A334D00DBD47D /* HomeCell.swift */; };
 		8339453A214A36E300DBD47D /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83394539214A36E300DBD47D /* MeViewController.swift */; };
 		8339453C214A370300DBD47D /* MeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339453B214A370300DBD47D /* MeCell.swift */; };
+		839812C521A55FD20009D847 /* HWCoverWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839812C421A55FD20009D847 /* HWCoverWindow.swift */; };
+		839812CC21A5602E0009D847 /* subView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 839812CA21A5602E0009D847 /* subView.xib */; };
+		839812CD21A5602E0009D847 /* subView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839812CB21A5602E0009D847 /* subView.swift */; };
+		839812D021A5614B0009D847 /* HWCoverWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839812CE21A5614B0009D847 /* HWCoverWindowViewController.swift */; };
+		839812D121A5614B0009D847 /* HWCoverWindowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 839812CF21A5614B0009D847 /* HWCoverWindowViewController.xib */; };
+		839812D421A5686A0009D847 /* UILabelExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839812D321A5686A0009D847 /* UILabelExtensionViewController.swift */; };
 		FDB301BD4E11A785EB74A490 /* Pods_LHWDome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47664FA0FB6A26A69EA7670F /* Pods_LHWDome.framework */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +125,12 @@
 		83394534214A334D00DBD47D /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		83394539214A36E300DBD47D /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		8339453B214A370300DBD47D /* MeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeCell.swift; sourceTree = "<group>"; };
+		839812C421A55FD20009D847 /* HWCoverWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWCoverWindow.swift; sourceTree = "<group>"; };
+		839812CA21A5602E0009D847 /* subView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = subView.xib; sourceTree = "<group>"; };
+		839812CB21A5602E0009D847 /* subView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = subView.swift; sourceTree = "<group>"; };
+		839812CE21A5614B0009D847 /* HWCoverWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWCoverWindowViewController.swift; sourceTree = "<group>"; };
+		839812CF21A5614B0009D847 /* HWCoverWindowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HWCoverWindowViewController.xib; sourceTree = "<group>"; };
+		839812D321A5686A0009D847 /* UILabelExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtensionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +196,8 @@
 		83349525215F139600AB0453 /* ChlidController(子控制器) */ = {
 			isa = PBXGroup;
 			children = (
+				839812D221A568380009D847 /* UILabelExtension */,
+				839812C621A55FF70009D847 /* HWCoverWindow(自定义遮盖) */,
 				83349539215F1F7400AB0453 /* UIButtonExtension */,
 				83349534215F1CE100AB0453 /* NSMutableAttributedStringExtension */,
 				8334952B215F169E00AB0453 /* UITextFieldExtension */,
@@ -405,6 +419,7 @@
 		83394518214A324B00DBD47D /* Tool(工具类) */ = {
 			isa = PBXGroup;
 			children = (
+				839812C321A55FC50009D847 /* HWCoverWindow */,
 				83394530214A328200DBD47D /* HWTools.swift */,
 				83394527214A325F00DBD47D /* HWBaseTableView */,
 				83394519214A325300DBD47D /* HWBaseCollectionView */,
@@ -458,6 +473,41 @@
 				83394539214A36E300DBD47D /* MeViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		839812C321A55FC50009D847 /* HWCoverWindow */ = {
+			isa = PBXGroup;
+			children = (
+				839812C421A55FD20009D847 /* HWCoverWindow.swift */,
+			);
+			path = HWCoverWindow;
+			sourceTree = "<group>";
+		};
+		839812C621A55FF70009D847 /* HWCoverWindow(自定义遮盖) */ = {
+			isa = PBXGroup;
+			children = (
+				839812C921A560220009D847 /* View */,
+				839812CE21A5614B0009D847 /* HWCoverWindowViewController.swift */,
+				839812CF21A5614B0009D847 /* HWCoverWindowViewController.xib */,
+			);
+			path = "HWCoverWindow(自定义遮盖)";
+			sourceTree = "<group>";
+		};
+		839812C921A560220009D847 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				839812CB21A5602E0009D847 /* subView.swift */,
+				839812CA21A5602E0009D847 /* subView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		839812D221A568380009D847 /* UILabelExtension */ = {
+			isa = PBXGroup;
+			children = (
+				839812D321A5686A0009D847 /* UILabelExtensionViewController.swift */,
+			);
+			path = UILabelExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -570,11 +620,13 @@
 				8334953F215F1F9300AB0453 /* 二维码分享icon@2x.png in Resources */,
 				8334953D215F1F8100AB0453 /* UIButtonExtensionViewController.xib in Resources */,
 				83394523214A325300DBD47D /* HWNoDataView.xib in Resources */,
+				839812CC21A5602E0009D847 /* subView.xib in Resources */,
 				83394525214A325300DBD47D /* 没数据缺省页@2x.png in Resources */,
 				8334952F215F16AE00AB0453 /* UITextFieldExtensionViewController.xib in Resources */,
 				833944CE2149F89800DBD47D /* LaunchScreen.storyboard in Resources */,
 				833944CB2149F89800DBD47D /* Assets.xcassets in Resources */,
 				83394526214A325300DBD47D /* 没数据缺省页@3x.png in Resources */,
+				839812D121A5614B0009D847 /* HWCoverWindowViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,11 +697,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				833945082149FF6E00DBD47D /* UIColor+HWExtension.swift in Sources */,
+				839812D021A5614B0009D847 /* HWCoverWindowViewController.swift in Sources */,
 				8334953C215F1F8100AB0453 /* UIButtonExtensionViewController.swift in Sources */,
 				8339453C214A370300DBD47D /* MeCell.swift in Sources */,
 				83349536215F1CED00AB0453 /* NSMutableAttributedStringExtensionViewController.swift in Sources */,
 				833944FE2149FB8700DBD47D /* BaseModel.swift in Sources */,
 				83394533214A330400DBD47D /* UIView+HWExtension.swift in Sources */,
+				839812D421A5686A0009D847 /* UILabelExtensionViewController.swift in Sources */,
 				83394531214A328200DBD47D /* HWTools.swift in Sources */,
 				83349533215F1C9400AB0453 /* NSMutableAttributedString+HWExtension.swift in Sources */,
 				8339450A214A049C00DBD47D /* String+HWExtension.swift in Sources */,
@@ -664,12 +718,14 @@
 				83349531215F176F00AB0453 /* UIViewController+HWExtension.swift in Sources */,
 				8339450E214A2EBE00DBD47D /* UICollectionView+HWExtension.swift in Sources */,
 				8334952E215F16AE00AB0453 /* UITextFieldExtensionViewController.swift in Sources */,
+				839812C521A55FD20009D847 /* HWCoverWindow.swift in Sources */,
 				83394517214A320C00DBD47D /* HomeViewController.swift in Sources */,
 				83394522214A325300DBD47D /* HWNoDataView.swift in Sources */,
 				83394535214A334D00DBD47D /* HomeCell.swift in Sources */,
 				8339453A214A36E300DBD47D /* MeViewController.swift in Sources */,
 				83349538215F1EE500AB0453 /* UIButton+HWExtension.swift in Sources */,
 				83394521214A325300DBD47D /* HWBaseCollectionViewController.swift in Sources */,
+				839812CD21A5602E0009D847 /* subView.swift in Sources */,
 				833944FC2149FB8700DBD47D /* BaseViewController.swift in Sources */,
 				833944C42149F89700DBD47D /* AppDelegate.swift in Sources */,
 				833944FD2149FB8700DBD47D /* MyTabBarController.swift in Sources */,

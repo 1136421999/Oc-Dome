@@ -15,14 +15,22 @@ public extension NSMutableAttributedString {
     }
     /// 添加中划线
     @discardableResult
-    func hw_addMidline(_ lineHeght: Int) -> NSMutableAttributedString {
-        addAttributes([.strikethroughStyle:lineHeght], range: hw_allRange())
+    func hw_addMidline(_ lineHeght: Int, _ range: NSRange? = nil) -> NSMutableAttributedString {
+        if range == nil {
+            addAttributes([.strikethroughStyle:lineHeght], range: hw_allRange())
+        } else {
+            addAttributes([.strikethroughStyle:lineHeght], range: range!)
+        }
         return self
     }
     /// 中划线颜色
     @discardableResult
-    func hw_midlineColor(_ color: UIColor) -> NSMutableAttributedString{
-        addAttributes([.strikethroughColor:color], range: hw_allRange())
+    func hw_midlineColor(_ color: UIColor, _ range: NSRange? = nil) -> NSMutableAttributedString{
+        if range == nil {
+            addAttributes([.strikethroughColor:color], range: hw_allRange())
+        } else {
+            addAttributes([.strikethroughColor:color], range: range!)
+        }
         return self
     }
     /// 给文字添加描边
@@ -30,33 +38,53 @@ public extension NSMutableAttributedString {
     /// - Parameter width: 描边宽带
     /// - Returns:
     @discardableResult
-    func hw_addStroke(_ width: CGFloat) -> NSMutableAttributedString {
-        addAttributes([.strokeWidth:width], range: hw_allRange())
+    func hw_addStroke(_ width: CGFloat, _ range: NSRange? = nil) -> NSMutableAttributedString {
+        if range == nil {
+            addAttributes([.strokeWidth:width], range: hw_allRange())
+        } else {
+            addAttributes([.strokeWidth:width], range: range!)
+        }
         return self
     }
     /// 描边颜色
     @discardableResult
-    func hw_strokeColor(_ color: UIColor) -> NSMutableAttributedString { 
-        addAttributes([.strokeColor:color], range: hw_allRange())
+    func hw_strokeColor(_ color: UIColor, _ range: NSRange? = nil) -> NSMutableAttributedString {
+        if range == nil {
+            addAttributes([.strokeColor:color], range: hw_allRange())
+        } else {
+            addAttributes([.strokeColor:color], range: range!)
+        }
         return self
     }
     
     /// 添加字间距
     @discardableResult
-    func hw_addSpace(_ space: CGFloat) -> NSMutableAttributedString {
-        addAttributes([.kern:space], range: hw_allRange())
+    func hw_addSpace(_ space: CGFloat, _ range: NSRange? = nil) -> NSMutableAttributedString {
+        if range == nil {
+            addAttributes([.kern:space], range: hw_allRange())
+        } else {
+            addAttributes([.kern:space], range: range!)
+        }
         return self
     }
     /// 背景色
     @discardableResult
-    func hw_backgroundColor(_ color: UIColor) -> NSMutableAttributedString {
-        addAttributes([.backgroundColor:color], range: hw_allRange())
+    func hw_backgroundColor(_ color: UIColor, _ range: NSRange? = nil) -> NSMutableAttributedString {
+        if range == nil {
+            addAttributes([.backgroundColor:color], range: hw_allRange())
+        } else {
+            addAttributes([.backgroundColor:color], range: range!)
+        }
         return self
     }
     /// 文字颜色
     @discardableResult
-    public func hw_color(_ color: UIColor) -> NSMutableAttributedString {
-        addAttributes([.foregroundColor:color], range: hw_allRange())
+    public func hw_color(_ color: UIColor, _ range: NSRange? = nil) -> NSMutableAttributedString {
+        if range == nil {
+            addAttributes([.foregroundColor:color], range: hw_allRange())
+        } else {
+            addAttributes([.foregroundColor:color], range: range!)
+        }
         return self
     }
 
@@ -65,37 +93,57 @@ public extension NSMutableAttributedString {
     /// - Parameter style: <#style description#>
     /// - Returns: <#return value description#>
     @discardableResult
-    func hw_addUnderLine(_ style: NSUnderlineStyle) -> NSMutableAttributedString{
-        addAttributes([.underlineStyle:style.rawValue], range: hw_allRange())
+    func hw_addUnderLine(_ style: NSUnderlineStyle, _ range: NSRange? = nil) -> NSMutableAttributedString{
+        if range == nil {
+            addAttributes([.underlineStyle:style.rawValue], range: hw_allRange())
+        } else {
+            addAttributes([.underlineStyle:style.rawValue], range: range!)
+        }
         return self
     }
     /// 下划线颜色
     @discardableResult
-    func hw_underLineColor(_ color: UIColor) -> NSMutableAttributedString{
-        addAttributes([.underlineColor:color], range: hw_allRange())
+    func hw_underLineColor(_ color: UIColor, _ range: NSRange? = nil) -> NSMutableAttributedString{
+        if range == nil {
+            addAttributes([.underlineColor:color], range: hw_allRange())
+        } else {
+            addAttributes([.underlineColor:color], range: range!)
+        }
         return self
     }
     
     /// 字体
     @discardableResult
-    func hw_font(_ font: UIFont) -> NSMutableAttributedString{
-        addAttributes([.font:font], range: hw_allRange())
+    func hw_font(_ font: UIFont, _ range: NSRange? = nil) -> NSMutableAttributedString{
+        if range == nil {
+            addAttributes([.font:font], range: hw_allRange())
+        } else {
+            addAttributes([.font:font], range: range!)
+        }
         return self
     }
     /// 系统字体大小
     @discardableResult
-    func hw_fontSize(_ size: CGFloat)->NSMutableAttributedString{
-        addAttributes([.font:UIFont.systemFont(ofSize: size)], range: hw_allRange())
+    func hw_fontSize(_ size: CGFloat, _ range: NSRange? = nil)->NSMutableAttributedString{
+        if range == nil {
+            addAttributes([.font:UIFont.systemFont(ofSize: size)], range: hw_allRange())
+        } else {
+            addAttributes([.font:UIFont.systemFont(ofSize: size)], range: range!)
+        }
         return self
     }
     
     /// 添加行间距
     @discardableResult
-    func hw_addLineSpace(_ space: CGFloat) -> NSMutableAttributedString {
+    func hw_addLineSpace(_ space: CGFloat, _ range: NSRange? = nil) -> NSMutableAttributedString {
         let style = NSMutableParagraphStyle()
         style.lineSpacing = space
         style.lineBreakMode = .byCharWrapping
-        addAttribute(.paragraphStyle, value: style, range: hw_allRange())
+        if range == nil {
+            addAttribute(.paragraphStyle, value: style, range: hw_allRange())
+        } else {
+            addAttribute(.paragraphStyle, value: style, range: range!)
+        }
         return self
     }
     /// 拼接富文本

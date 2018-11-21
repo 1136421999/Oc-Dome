@@ -26,10 +26,6 @@ class NSMutableAttributedStringExtensionViewController: BaseViewController {
         view.addSubview(textLabel)
         textLabel.attributedText = str.hw_toAttribute()
             .hw_color(UIColor.gray)
-        textLabel.clickRichTextWithStrings(strings: ["我","要","当"]) {
-            print("来了")
-        }
-        
         // MARK: - 删除线
         let textLabel2 = UILabel.init(frame: CGRect.init(x: 20, y: 130, width: UIScreen.main.bounds.size.width - 40, height: 30))
         view.addSubview(textLabel2)
