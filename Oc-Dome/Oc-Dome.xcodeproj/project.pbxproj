@@ -24,6 +24,7 @@
 		62D1366F2199B8D9001F78A8 /* 我的未选中@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 62D1366B2199B8D9001F78A8 /* 我的未选中@3x.png */; };
 		62D136742199BAA0001F78A8 /* UIImage+HWExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D136732199BAA0001F78A8 /* UIImage+HWExtension.m */; };
 		62D136782199BF0C001F78A8 /* UIColor+HWExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D136772199BF0C001F78A8 /* UIColor+HWExtension.m */; };
+		8339DB4921A7B25D0041F88E /* UIViewController+HWExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8339DB4821A7B25D0041F88E /* UIViewController+HWExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		62D136752199BBD8001F78A8 /* Oc-Dome.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Oc-Dome.pch"; sourceTree = "<group>"; };
 		62D136762199BF0C001F78A8 /* UIColor+HWExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+HWExtension.h"; sourceTree = "<group>"; };
 		62D136772199BF0C001F78A8 /* UIColor+HWExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HWExtension.m"; sourceTree = "<group>"; };
+		8339DB4721A7B25D0041F88E /* UIViewController+HWExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HWExtension.h"; sourceTree = "<group>"; };
+		8339DB4821A7B25D0041F88E /* UIViewController+HWExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HWExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +192,8 @@
 		62D136562199B1F5001F78A8 /* Extension(扩展) */ = {
 			isa = PBXGroup;
 			children = (
+				8339DB4721A7B25D0041F88E /* UIViewController+HWExtension.h */,
+				8339DB4821A7B25D0041F88E /* UIViewController+HWExtension.m */,
 				62D136722199BAA0001F78A8 /* UIImage+HWExtension.h */,
 				62D136732199BAA0001F78A8 /* UIImage+HWExtension.m */,
 				62D136762199BF0C001F78A8 /* UIColor+HWExtension.h */,
@@ -395,6 +400,7 @@
 				62D136742199BAA0001F78A8 /* UIImage+HWExtension.m in Sources */,
 				62D136302199B159001F78A8 /* main.m in Sources */,
 				62D136222199B158001F78A8 /* AppDelegate.m in Sources */,
+				8339DB4921A7B25D0041F88E /* UIViewController+HWExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,9 +562,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AZ6XCUEXK7;
+				DEVELOPMENT_TEAM = 7KJ3ZR9GXK;
 				GCC_PREFIX_HEADER = "Oc-Dome/Oc-Dome.pch";
 				INFOPLIST_FILE = "Oc-Dome/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,9 +581,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AZ6XCUEXK7;
+				DEVELOPMENT_TEAM = 7KJ3ZR9GXK;
 				GCC_PREFIX_HEADER = "Oc-Dome/Oc-Dome.pch";
 				INFOPLIST_FILE = "Oc-Dome/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
