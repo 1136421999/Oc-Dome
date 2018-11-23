@@ -15,8 +15,9 @@ class UILabelExtensionViewController: UIViewController {
         setBGColor()
         setTitle(title: "label点击事件")
         var label : UILabel
-        label = UILabel.init(frame: CGRect.init(x: 10, y: 100, width: 350, height: 40))
+        label = UILabel.init(frame: CGRect.init(x: 10, y: 100, width: 350, height: 100))
         let str = "这是一个swfit Label,用与给Label扩展点击事件"
+        label.numberOfLines = 0
         label.textColor = UIColor.black
         label.text = str
         label.hw_addTapAction(["这","swfit","Label"]) { (string, range, int) in
