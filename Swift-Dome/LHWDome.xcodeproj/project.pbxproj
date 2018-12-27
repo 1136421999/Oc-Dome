@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62AFD28221CDC83600839ECA /* HWMarqueeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AFD28021CDC83600839ECA /* HWMarqueeViewController.swift */; };
+		62AFD28321CDC83600839ECA /* HWMarqueeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62AFD28121CDC83600839ECA /* HWMarqueeViewController.xib */; };
+		62AFD28621CDC8CD00839ECA /* HWMarqueeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AFD28521CDC8CD00839ECA /* HWMarqueeView.swift */; };
 		83349528215F13AF00AB0453 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83349527215F13AF00AB0453 /* ExampleViewController.swift */; };
 		8334952A215F167400AB0453 /* UITextField+HWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83349529215F167400AB0453 /* UITextField+HWExtension.swift */; };
 		8334952E215F16AE00AB0453 /* UITextFieldExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334952C215F16AE00AB0453 /* UITextFieldExtensionViewController.swift */; };
@@ -77,6 +80,9 @@
 		184FA5FA0769F87C12163E28 /* Pods-LHWDome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHWDome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LHWDome/Pods-LHWDome.debug.xcconfig"; sourceTree = "<group>"; };
 		3B5736A01104F2C2E5C8F9F2 /* Pods-LHWDome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHWDome.release.xcconfig"; path = "Pods/Target Support Files/Pods-LHWDome/Pods-LHWDome.release.xcconfig"; sourceTree = "<group>"; };
 		47664FA0FB6A26A69EA7670F /* Pods_LHWDome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LHWDome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62AFD28021CDC83600839ECA /* HWMarqueeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWMarqueeViewController.swift; sourceTree = "<group>"; };
+		62AFD28121CDC83600839ECA /* HWMarqueeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HWMarqueeViewController.xib; sourceTree = "<group>"; };
+		62AFD28521CDC8CD00839ECA /* HWMarqueeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWMarqueeView.swift; sourceTree = "<group>"; };
 		83349527215F13AF00AB0453 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		83349529215F167400AB0453 /* UITextField+HWExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+HWExtension.swift"; sourceTree = "<group>"; };
 		8334952C215F16AE00AB0453 /* UITextFieldExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensionViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +173,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		62AFD27F21CDC80200839ECA /* 文字跑马灯 */ = {
+			isa = PBXGroup;
+			children = (
+				62AFD28021CDC83600839ECA /* HWMarqueeViewController.swift */,
+				62AFD28121CDC83600839ECA /* HWMarqueeViewController.xib */,
+			);
+			path = "文字跑马灯";
+			sourceTree = "<group>";
+		};
+		62AFD28421CDC8B300839ECA /* 跑马灯 */ = {
+			isa = PBXGroup;
+			children = (
+				62AFD28521CDC8CD00839ECA /* HWMarqueeView.swift */,
+			);
+			path = "跑马灯";
+			sourceTree = "<group>";
+		};
 		71BB30166ED565C983A0A45A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +219,7 @@
 		83349525215F139600AB0453 /* ChlidController(子控制器) */ = {
 			isa = PBXGroup;
 			children = (
+				62AFD27F21CDC80200839ECA /* 文字跑马灯 */,
 				839812D221A568380009D847 /* UILabelExtension */,
 				839812C621A55FF70009D847 /* HWCoverWindow(自定义遮盖) */,
 				83349539215F1F7400AB0453 /* UIButtonExtension */,
@@ -419,6 +443,7 @@
 		83394518214A324B00DBD47D /* Tool(工具类) */ = {
 			isa = PBXGroup;
 			children = (
+				62AFD28421CDC8B300839ECA /* 跑马灯 */,
 				839812C321A55FC50009D847 /* HWCoverWindow */,
 				83394530214A328200DBD47D /* HWTools.swift */,
 				83394527214A325F00DBD47D /* HWBaseTableView */,
@@ -625,6 +650,7 @@
 				8334952F215F16AE00AB0453 /* UITextFieldExtensionViewController.xib in Resources */,
 				833944CE2149F89800DBD47D /* LaunchScreen.storyboard in Resources */,
 				833944CB2149F89800DBD47D /* Assets.xcassets in Resources */,
+				62AFD28321CDC83600839ECA /* HWMarqueeViewController.xib in Resources */,
 				83394526214A325300DBD47D /* 没数据缺省页@3x.png in Resources */,
 				839812D121A5614B0009D847 /* HWCoverWindowViewController.xib in Resources */,
 			);
@@ -704,6 +730,7 @@
 				833944FE2149FB8700DBD47D /* BaseModel.swift in Sources */,
 				83394533214A330400DBD47D /* UIView+HWExtension.swift in Sources */,
 				839812D421A5686A0009D847 /* UILabelExtensionViewController.swift in Sources */,
+				62AFD28221CDC83600839ECA /* HWMarqueeViewController.swift in Sources */,
 				83394531214A328200DBD47D /* HWTools.swift in Sources */,
 				83349533215F1C9400AB0453 /* NSMutableAttributedString+HWExtension.swift in Sources */,
 				8339450A214A049C00DBD47D /* String+HWExtension.swift in Sources */,
@@ -727,6 +754,7 @@
 				83394521214A325300DBD47D /* HWBaseCollectionViewController.swift in Sources */,
 				839812CD21A5602E0009D847 /* subView.swift in Sources */,
 				833944FC2149FB8700DBD47D /* BaseViewController.swift in Sources */,
+				62AFD28621CDC8CD00839ECA /* HWMarqueeView.swift in Sources */,
 				833944C42149F89700DBD47D /* AppDelegate.swift in Sources */,
 				833944FD2149FB8700DBD47D /* MyTabBarController.swift in Sources */,
 				83394524214A325300DBD47D /* UICollectionView+HWExtension.m in Sources */,

@@ -42,7 +42,7 @@
 
 #pragma mark - 设置子控制器
 - (void)setTabBarItem {
-    [self setChildControllerWithTitle:@"首页" VCName:@"UIViewController"];
+    [self setChildControllerWithTitle:@"首页" VCName:@"HomeViewController"];
     [self setChildControllerWithTitle:@"我的" VCName:@"UIViewController"];
 }
 
@@ -52,7 +52,7 @@
     vc.title = title;
     vc.tabBarItem.image = [UIImage hw_imageNamed:[NSString stringWithFormat:@"%@未选中", title]];
     vc.tabBarItem.selectedImage = [UIImage hw_imageNamed:[NSString stringWithFormat:@"%@选中", title]];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    MyNavigationController *nav = [[MyNavigationController alloc] initWithRootViewController:vc];
     [self addChildViewController:nav];
 }
 

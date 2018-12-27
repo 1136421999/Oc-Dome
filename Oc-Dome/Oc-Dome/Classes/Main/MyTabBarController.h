@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MyNavigationController.h"
 @interface MyTabBarController : UITabBarController
 
 @end

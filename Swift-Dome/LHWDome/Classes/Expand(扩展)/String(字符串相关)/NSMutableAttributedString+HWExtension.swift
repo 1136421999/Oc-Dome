@@ -162,6 +162,16 @@ public extension NSMutableAttributedString {
         addAttributes([NSAttributedStringKey.shadow: shadow], range: hw_allRange())
         return self
     }
+    
+    /// 添加图片
+    @discardableResult
+    func hw_addImage(_ image: UIImage, _ rect: CGRect) -> NSMutableAttributedString {
+        let textAttachment : NSTextAttachment = NSTextAttachment()
+        textAttachment.image = image
+        textAttachment.bounds = rect
+        append(NSAttributedString(attachment: textAttachment))
+        return self
+    }
 }
 
 

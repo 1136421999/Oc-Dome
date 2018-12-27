@@ -1,0 +1,97 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - Alipay-SDK (15.5.0)
+  - DTCoreText (1.6.21):
+    - DTCoreText/Core (= 1.6.21)
+    - DTFoundation/Core (~> 1.7.5)
+    - DTFoundation/DTAnimatedGIF (~> 1.7.5)
+    - DTFoundation/DTHTMLParser (~> 1.7.5)
+    - DTFoundation/UIKit (~> 1.7.5)
+  - DTCoreText/Core (1.6.21):
+    - DTFoundation/Core (~> 1.7.5)
+    - DTFoundation/DTAnimatedGIF (~> 1.7.5)
+    - DTFoundation/DTHTMLParser (~> 1.7.5)
+    - DTFoundation/UIKit (~> 1.7.5)
+  - DTFoundation/Core (1.7.13)
+  - DTFoundation/DTAnimatedGIF (1.7.13)
+  - DTFoundation/DTHTMLParser (1.7.13):
+    - DTFoundation/Core
+  - DTFoundation/UIKit (1.7.13):
+    - DTFoundation/Core
+  - Masonry (1.1.0)
+  - MJExtension (3.0.15.1)
+  - MJRefresh (3.1.15.7)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - UMCCommon (1.5.3)
+  - UMCShare/Core (6.9.5):
+    - UMCCommon
+  - UMCShare/Social/ReducedQQ (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/ReducedWeChat (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/UI (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+  - WechatOpenSDK (1.8.3)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
+  - Alipay-SDK
+  - DTCoreText (~> 1.6.21)
+  - Masonry
+  - MJExtension
+  - MJRefresh
+  - SDWebImage
+  - UMCShare/Social/ReducedQQ
+  - UMCShare/Social/ReducedWeChat
+  - UMCShare/UI
+  - WechatOpenSDK
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - Alipay-SDK
+    - DTCoreText
+    - DTFoundation
+    - Masonry
+    - MJExtension
+    - MJRefresh
+    - SDWebImage
+    - UMCCommon
+    - UMCShare
+    - WechatOpenSDK
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Alipay-SDK: 704c302c8619e235f9acfb6f731bb7f36265bca5
+  DTCoreText: e5d688cffc9f6a61eddd1a4f94e2046851230de3
+  DTFoundation: f03be9fd786f11e505bb8fc44e2a3732bf0917df
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  UMCCommon: 016af43c0f769feb1ae1861d65aaf2b23b89c9c7
+  UMCShare: 552b29753f1b4da87b51d96545ed19e6263df397
+  WechatOpenSDK: 3117412f8aafde4758cac1e8d20b93c67cafcfef
+
+PODFILE CHECKSUM: 210bead38b7af29041fa02fdc4dcd231efebcb1c
+
+COCOAPODS: 1.5.0

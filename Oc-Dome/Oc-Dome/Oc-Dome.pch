@@ -9,8 +9,15 @@
 #ifndef Oc_Dome_pch
 #define Oc_Dome_pch
 
-#import "UIImage+HWExtension.h"
-#import "UIColor+HWExtension.h"
+#import "UIImage+HWCategory.h"
+#import "UIColor+HWCategory.h"
+#import "UITableView+HWCategory.h"
+#import "UICollectionView+HWCategory.h"
+#import "UIScrollView+HWCategory.h"
+#import "HWCategory.h"
+#import "Macro.h"
+#import "Api.h"
 
+#import <MJExtension/MJExtension.h>
 
 #endif /* Oc_Dome_pch */
