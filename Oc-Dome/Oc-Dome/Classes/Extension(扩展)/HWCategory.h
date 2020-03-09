@@ -22,5 +22,6 @@
 #import "UIImageView+HWCategory.h"
 #import "NSString+HWCategory.h"
 #import "UIApplication+HWCategory.h"
-
+#import "NSMutableAttributedString+HWCategry.h"
+#import "UILabel+HWCategory.h"
 #endif /* HWCategory_h */

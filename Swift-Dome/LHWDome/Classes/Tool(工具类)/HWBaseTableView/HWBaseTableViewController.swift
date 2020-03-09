@@ -64,11 +64,11 @@ class HWBaseTableViewController: BaseViewController {
 //        } else {
 //            self.automaticallyAdjustsScrollViewInsets = false
 //        }
-        tableView.frame = CGRect.init(x: 0, y: 0, width: HWScreenW(), height: HWScreenH()-hw_navigationH())
+        tableView.frame = CGRect.init(x: 0, y: 0, width: HW_ScreenW, height: HW_ScreenH-hw_navigationH)
         if self.hidesBottomBarWhenPushed == false{ // tabBar没隐藏
-            tableView.height -= hw_tabBarH()
+            tableView.height -= hw_tabBarH
         } else { // tabBar隐藏
-            if isiPhoneX() {
+            if isiPhoneX {
                 tableView.height -= 34
             }
         }
@@ -96,6 +96,9 @@ class HWBaseTableViewController: BaseViewController {
         super.viewDidLoad()
         self.tableView.backgroundColor = HWBGColor()
         self.noDataView = HWNoDataView.noDataView(image: nil, title: nil)
+//        tableView.snp.makeConstraints { (make) in
+//            make.edges.equalToSuperview()
+//        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

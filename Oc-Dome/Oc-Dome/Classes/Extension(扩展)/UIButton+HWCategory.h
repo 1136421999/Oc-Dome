@@ -21,7 +21,23 @@ typedef enum : NSUInteger {
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIButton (HWCategory)
+
 @property (nonatomic, copy) void(^actionBlock)(void);
+
+/** 快速设置默认文字 */
+- (UIButton *(^)(NSString *title))hw_setTitle_normal;
+/** 快速设置选中文字 */
+- (UIButton *(^)(NSString *title))hw_setTitle_selected;
+/** 快速设置默认文字颜色 */
+- (UIButton *(^)(UIColor *color))hw_setTitleColor_normal;
+/** 快速设置选中文字颜色 */
+- (UIButton *(^)(UIColor *color))hw_setTitleColor_selected;
+/** 快速设置文字大小 */
+- (UIButton *(^)(CGFloat font))hw_setFont;
+/** 快速设置默认图片 */
+- (UIButton *(^)(NSString *name))hw_setImage_normal;
+/** 快速设置选中图片 */
+- (UIButton *(^)(NSString *name))hw_setImage_selected;
 /**
  倒计时
  @param time 倒计时时间 以秒未单位

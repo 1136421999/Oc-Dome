@@ -32,7 +32,7 @@
 /** 主要颜色 */
 #define hw_MainColor [@"319FFA" hw_hexColor]
 /** 渐变颜色 */
-#define hw_GradientColor [UIColor hw_colorWithGradientStyle:HWGradientStyleLeftToRight withFrame:[UIScreen mainScreen].bounds andColors:@[[@"3399FE" hw_hexColor], [@"27B2E8" hw_hexColor]]]
+#define hw_GradientColor [UIColor hw_colorWithGradientStyle:HWGradientStyleLeftToRight withFrame:[UIScreen mainScreen].bounds andColors:@[[@"609EFA" hw_hexColor], [@"89BEFF" hw_hexColor]]]
 #pragma mark - 尺寸相关
 #define HWScreenW [UIScreen mainScreen].bounds.size.width
 #define HWScreenH [UIScreen mainScreen].bounds.size.height

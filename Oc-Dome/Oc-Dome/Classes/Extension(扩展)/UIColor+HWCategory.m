@@ -12,7 +12,7 @@
 
 /**
  16进制转颜色
-
+ 
  @param hexString 16进制字符串
  @param alpha 透明度0~1
  @return 返回颜色
@@ -92,7 +92,7 @@
             UIImage *backgroundColorImage = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
             
-//            [self setGradientImage:backgroundColorImage];
+            //            [self setGradientImage:backgroundColorImage];
             return [UIColor colorWithPatternImage:backgroundColorImage];
         }
             
@@ -127,7 +127,7 @@
             CGGradientRelease(myGradient); // Necessary?
             UIGraphicsEndImageContext();
             
-//            [self setGradientImage:backgroundColorImage];
+            //            [self setGradientImage:backgroundColorImage];
             return [UIColor colorWithPatternImage:backgroundColorImage];
         }
             
@@ -143,10 +143,31 @@
             UIImage *backgroundColorImage = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
             
-//            [self setGradientImage:backgroundColorImage];
+            //            [self setGradientImage:backgroundColorImage];
             return [UIColor colorWithPatternImage:backgroundColorImage];
         }
             
     }
+}
+
++ (UIColor *)hw_randomColor {
+    int R = (arc4random() % 256);
+    int G = (arc4random() % 256);
+    int B = (arc4random() % 256);
+    return [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1];
+}
+
+- (UIColor *)hw_alpha:(CGFloat)alpha {
+    CGFloat red = 0.0;
+    CGFloat green = 0.0;
+    CGFloat blue = 0.0;
+    CGFloat oldAlpha = 0.0;
+    [self getRed:&red green:&green blue:&blue alpha:&oldAlpha];
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+}
+- (UIColor *(^)(CGFloat))hw_setAlpha {
+    return ^(CGFloat alpha) {
+        return [self hw_alpha:alpha];
+    };
 }
 @end

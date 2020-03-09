@@ -6,6 +6,9 @@
 //  Copyright © 2018年 Jason. All rights reserved.
 //
 
+
+/// 上下文字跑马灯
+
 import UIKit
 
 protocol HWMarqueeViewDataSource:NSObjectProtocol {

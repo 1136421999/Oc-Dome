@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SpeechViewController">
+            <connections>
+                <outlet property="tf" destination="zbr-Wd-OHJ" id="NOd-ig-e1T"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="np6-4L-51U">
+                    <rect key="frame" x="20" y="230" width="335" height="45"/>
+                    <color key="backgroundColor" red="0.9608843923" green="0.68644475940000005" blue="0.67448431249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="N95-BN-XjK"/>
+                    </constraints>
+                    <state key="normal" title="语音播报">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="btn_1Click:" destination="-1" eventType="touchUpInside" id="qlA-cB-LFs"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入播报内容" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zbr-Wd-OHJ">
+                    <rect key="frame" x="20" y="160" width="335" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pl-RN-k9C">
+                    <rect key="frame" x="20" y="295" width="335" height="45"/>
+                    <color key="backgroundColor" red="0.9608843923" green="0.68644475940000005" blue="0.67448431249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="UXT-qd-9hb"/>
+                    </constraints>
+                    <state key="normal" title="支付宝到账示例语音">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="btn_2Click:" destination="-1" eventType="touchUpInside" id="J8u-XR-6GA"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8Pl-RN-k9C" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="4FT-4n-VCQ"/>
+                <constraint firstItem="np6-4L-51U" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="5aW-xk-x6D"/>
+                <constraint firstItem="8Pl-RN-k9C" firstAttribute="top" secondItem="np6-4L-51U" secondAttribute="bottom" constant="20" id="9yX-sg-VwN"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="zbr-Wd-OHJ" secondAttribute="trailing" constant="20" id="Dmt-Ro-rB8"/>
+                <constraint firstItem="zbr-Wd-OHJ" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="140" id="XRG-am-ROi"/>
+                <constraint firstItem="np6-4L-51U" firstAttribute="top" secondItem="zbr-Wd-OHJ" secondAttribute="bottom" constant="40" id="cbD-pK-6ee"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="np6-4L-51U" secondAttribute="trailing" constant="20" id="f0A-yC-3dQ"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="8Pl-RN-k9C" secondAttribute="trailing" constant="20" id="vtU-hj-I9K"/>
+                <constraint firstItem="zbr-Wd-OHJ" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="xvO-2q-yxI"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+        </view>
+    </objects>
+</document>

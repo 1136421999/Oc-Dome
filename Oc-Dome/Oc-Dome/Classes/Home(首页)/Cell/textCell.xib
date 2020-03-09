@@ -25,16 +25,29 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar5" translatesAutoresizingMaskIntoConstraints="NO" id="Jid-rR-ebn">
+                        <rect key="frame" x="15" y="2" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Jid-rR-ebn" secondAttribute="height" id="0th-dn-kAK"/>
+                            <constraint firstAttribute="width" constant="40" id="DnT-by-597"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Jid-rR-ebn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="EtY-SY-fFZ"/>
                     <constraint firstItem="pmP-TS-SqE" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="HH4-SA-tpo"/>
                     <constraint firstItem="pmP-TS-SqE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RRk-Cl-pEL"/>
+                    <constraint firstItem="Jid-rR-ebn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Ykh-Su-I1W"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="img" destination="Jid-rR-ebn" id="nOD-ZW-zET"/>
                 <outlet property="titleLabel" destination="pmP-TS-SqE" id="Btp-La-Tym"/>
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="tabbar5" width="59" height="59"/>
+    </resources>
 </document>

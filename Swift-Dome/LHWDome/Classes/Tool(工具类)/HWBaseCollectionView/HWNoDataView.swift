@@ -21,7 +21,7 @@ class HWNoDataView: UIView {
     class func noDataView(image:UIImage?, title:String?)->HWNoDataView{
         let nibView = Bundle.main.loadNibNamed("HWNoDataView", owner: nil, options: nil)
         if let view = nibView?.first as? HWNoDataView{
-            view.iconImageView.image = image ?? HWImage(name: "没数据缺省页")
+            view.iconImageView.image = image ?? hw_Image(named: "没数据缺省页")
             view.titleLabel.text = title ?? "暂无数据"
             return view
         }

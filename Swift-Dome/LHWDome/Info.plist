@@ -41,5 +41,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>注意:使用后台定位会减少电池的使用寿命 是否允许使用定位?</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>注意:使用后台定位会减少电池的使用寿命 是否允许使用定位?</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>

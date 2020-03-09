@@ -14,6 +14,50 @@ static NSString  * const hw_ActionBlockButtonKey = @"hw_ActionBlockButtonKey";
 
 @implementation UIButton (HWCategory)
 
+- (UIButton * _Nonnull (^)(NSString * _Nonnull))hw_setTitle_normal {
+    return ^(NSString *title) {
+        [self setTitle:title forState:(UIControlStateNormal)];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(NSString * _Nonnull))hw_setTitle_selected {
+    return ^(NSString *title) {
+        [self setTitle:title forState:(UIControlStateSelected)];
+        return self;
+    };
+}
+/** 快速设置默认文字颜色 */
+- (UIButton *(^)(UIColor *color))hw_setTitleColor_normal {
+    return ^(UIColor *color) {
+        [self setTitleColor:color forState:(UIControlStateNormal)];
+        return self;
+    };
+}
+/** 快速设置选中文字颜色 */
+- (UIButton *(^)(UIColor *color))hw_setTitleColor_selected {
+    return ^(UIColor *color) {
+        [self setTitleColor:color forState:(UIControlStateSelected)];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(CGFloat))hw_setFont {
+    return ^(CGFloat font) {
+        self.titleLabel.font = [UIFont systemFontOfSize:font];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(NSString * _Nonnull))hw_setImage_normal {
+    return ^(NSString *name) {
+        [self setImage:[UIImage imageNamed:name] forState:(UIControlStateNormal)];
+        return self;
+    };
+}
+- (UIButton * _Nonnull (^)(NSString * _Nonnull))hw_setImage_selected {
+    return ^(NSString *name) {
+        [self setImage:[UIImage imageNamed:name] forState:(UIControlStateSelected)];
+        return self;
+    };
+}
 - (void)setActionBlock:(void (^)(void))actionBlock {
     [self addTarget:self action:@selector(hw_buttonClick:) forControlEvents:UIControlEventTouchUpInside];
     objc_setAssociatedObject(self, (__bridge const void * _Nonnull)(hw_ActionBlockButtonKey), actionBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);

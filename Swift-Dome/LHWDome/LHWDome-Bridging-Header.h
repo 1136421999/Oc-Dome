@@ -3,3 +3,7 @@
 //
 
 #import "UICollectionView+HWExtension.h"
+#import "GCDAsyncSocket.h"
+
+#include <ifaddrs.h>
+#import "HWWIFITools.h"

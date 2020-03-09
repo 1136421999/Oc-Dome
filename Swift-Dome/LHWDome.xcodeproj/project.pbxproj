@@ -3,13 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		622D890822D83A420072E452 /* CGFloat+HWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D890722D83A420072E452 /* CGFloat+HWExtension.swift */; };
+		622E51E122D2E896009D0F4F /* ColorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E51E022D2E896009D0F4F /* ColorInfo.swift */; };
+		622E51E622D31338009D0F4F /* HWCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622E51E522D31338009D0F4F /* HWCollectionViewController.swift */; };
+		624C7D402298EFA600447353 /* GCDSocketServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624C7D3E2298EFA600447353 /* GCDSocketServerViewController.swift */; };
+		624C7D412298EFA600447353 /* GCDSocketServerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624C7D3F2298EFA600447353 /* GCDSocketServerViewController.xib */; };
+		624C7D452298F27E00447353 /* HWWIFITools.m in Sources */ = {isa = PBXBuildFile; fileRef = 624C7D442298F27E00447353 /* HWWIFITools.m */; };
+		624C7D4A2299191400447353 /* GCDSocketClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624C7D482299191400447353 /* GCDSocketClientViewController.swift */; };
+		624C7D4B2299191400447353 /* GCDSocketClientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624C7D492299191400447353 /* GCDSocketClientViewController.xib */; };
+		628CD178229D240300E4DE78 /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = 628CD173229D240300E4DE78 /* Documentation.html */; };
+		628CD179229D240300E4DE78 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CD174229D240300E4DE78 /* GCDAsyncUdpSocket.m */; };
+		628CD17A229D240300E4DE78 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 628CD175229D240300E4DE78 /* GCDAsyncSocket.m */; };
+		629974A021F6B8F4008BE607 /* HWLocationManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6299749F21F6B8F4008BE607 /* HWLocationManage.swift */; };
+		629974A421F6B965008BE607 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629974A221F6B965008BE607 /* LocationViewController.swift */; };
+		629974A521F6B965008BE607 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 629974A321F6B965008BE607 /* LocationViewController.xib */; };
+		629974A921F6C09A008BE607 /* Date+HWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629974A821F6C09A008BE607 /* Date+HWExtension.swift */; };
+		629974AD21F6C212008BE607 /* UIImage+HWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629974AC21F6C212008BE607 /* UIImage+HWExtension.swift */; };
+		629974AF21F6C229008BE607 /* UIApplication+HWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629974AE21F6C229008BE607 /* UIApplication+HWExtension.swift */; };
 		62AFD28221CDC83600839ECA /* HWMarqueeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AFD28021CDC83600839ECA /* HWMarqueeViewController.swift */; };
 		62AFD28321CDC83600839ECA /* HWMarqueeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62AFD28121CDC83600839ECA /* HWMarqueeViewController.xib */; };
 		62AFD28621CDC8CD00839ECA /* HWMarqueeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AFD28521CDC8CD00839ECA /* HWMarqueeView.swift */; };
+		62CF1046229CC8BB00817FC0 /* Int+HWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CF1045229CC8BA00817FC0 /* Int+HWExtension.swift */; };
+		62D279202277E23900E16008 /* UIScrollView+HWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D2791F2277E23900E16008 /* UIScrollView+HWExtension.swift */; };
+		62EBFD3A21F0A75A00D980CC /* HWLevelMobileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EBFD3921F0A75A00D980CC /* HWLevelMobileView.swift */; };
+		62EBFD3C21F0B0A500D980CC /* UITextView+HWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EBFD3B21F0B0A500D980CC /* UITextView+HWExtension.swift */; };
+		62F62726229E6BAA00322EDD /* getgateway.c in Sources */ = {isa = PBXBuildFile; fileRef = 62F62725229E6BAA00322EDD /* getgateway.c */; };
+		62F9559222DEF7E000ED55CC /* HWHUDManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F9559122DEF7E000ED55CC /* HWHUDManage.swift */; };
 		83349528215F13AF00AB0453 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83349527215F13AF00AB0453 /* ExampleViewController.swift */; };
 		8334952A215F167400AB0453 /* UITextField+HWExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83349529215F167400AB0453 /* UITextField+HWExtension.swift */; };
 		8334952E215F16AE00AB0453 /* UITextFieldExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334952C215F16AE00AB0453 /* UITextFieldExtensionViewController.swift */; };
@@ -80,9 +103,37 @@
 		184FA5FA0769F87C12163E28 /* Pods-LHWDome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHWDome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LHWDome/Pods-LHWDome.debug.xcconfig"; sourceTree = "<group>"; };
 		3B5736A01104F2C2E5C8F9F2 /* Pods-LHWDome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LHWDome.release.xcconfig"; path = "Pods/Target Support Files/Pods-LHWDome/Pods-LHWDome.release.xcconfig"; sourceTree = "<group>"; };
 		47664FA0FB6A26A69EA7670F /* Pods_LHWDome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LHWDome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		622D890722D83A420072E452 /* CGFloat+HWExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+HWExtension.swift"; sourceTree = "<group>"; };
+		622E51E022D2E896009D0F4F /* ColorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorInfo.swift; sourceTree = "<group>"; };
+		622E51E522D31338009D0F4F /* HWCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWCollectionViewController.swift; sourceTree = "<group>"; };
+		624C7D3E2298EFA600447353 /* GCDSocketServerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDSocketServerViewController.swift; sourceTree = "<group>"; };
+		624C7D3F2298EFA600447353 /* GCDSocketServerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCDSocketServerViewController.xib; sourceTree = "<group>"; };
+		624C7D432298F27E00447353 /* HWWIFITools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWWIFITools.h; sourceTree = "<group>"; };
+		624C7D442298F27E00447353 /* HWWIFITools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWWIFITools.m; sourceTree = "<group>"; };
+		624C7D482299191400447353 /* GCDSocketClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDSocketClientViewController.swift; sourceTree = "<group>"; };
+		624C7D492299191400447353 /* GCDSocketClientViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCDSocketClientViewController.xib; sourceTree = "<group>"; };
+		628CD173229D240300E4DE78 /* Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Documentation.html; sourceTree = "<group>"; };
+		628CD174229D240300E4DE78 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		628CD175229D240300E4DE78 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		628CD176229D240300E4DE78 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		628CD177229D240300E4DE78 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		6299749F21F6B8F4008BE607 /* HWLocationManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWLocationManage.swift; sourceTree = "<group>"; };
+		629974A221F6B965008BE607 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		629974A321F6B965008BE607 /* LocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
+		629974A821F6C09A008BE607 /* Date+HWExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+HWExtension.swift"; sourceTree = "<group>"; };
+		629974AC21F6C212008BE607 /* UIImage+HWExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+HWExtension.swift"; sourceTree = "<group>"; };
+		629974AE21F6C229008BE607 /* UIApplication+HWExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+HWExtension.swift"; sourceTree = "<group>"; };
 		62AFD28021CDC83600839ECA /* HWMarqueeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWMarqueeViewController.swift; sourceTree = "<group>"; };
 		62AFD28121CDC83600839ECA /* HWMarqueeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HWMarqueeViewController.xib; sourceTree = "<group>"; };
 		62AFD28521CDC8CD00839ECA /* HWMarqueeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWMarqueeView.swift; sourceTree = "<group>"; };
+		62CF1045229CC8BA00817FC0 /* Int+HWExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+HWExtension.swift"; sourceTree = "<group>"; };
+		62D2791F2277E23900E16008 /* UIScrollView+HWExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+HWExtension.swift"; sourceTree = "<group>"; };
+		62EBFD3921F0A75A00D980CC /* HWLevelMobileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWLevelMobileView.swift; sourceTree = "<group>"; };
+		62EBFD3B21F0B0A500D980CC /* UITextView+HWExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+HWExtension.swift"; sourceTree = "<group>"; };
+		62F62723229E6BAA00322EDD /* route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = route.h; sourceTree = "<group>"; };
+		62F62724229E6BAA00322EDD /* getgateway.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = getgateway.h; sourceTree = "<group>"; };
+		62F62725229E6BAA00322EDD /* getgateway.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = getgateway.c; sourceTree = "<group>"; };
+		62F9559122DEF7E000ED55CC /* HWHUDManage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HWHUDManage.swift; sourceTree = "<group>"; };
 		83349527215F13AF00AB0453 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		83349529215F167400AB0453 /* UITextField+HWExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+HWExtension.swift"; sourceTree = "<group>"; };
 		8334952C215F16AE00AB0453 /* UITextFieldExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensionViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +224,127 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		622E51DF22D2E885009D0F4F /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				622E51E022D2E896009D0F4F /* ColorInfo.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		622E51E422D31311009D0F4F /* HWCollectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				622E51E522D31338009D0F4F /* HWCollectionViewController.swift */,
+			);
+			name = HWCollectionViewController;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		624C7D312298EE3800447353 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				622E51DF22D2E885009D0F4F /* Info */,
+				624C7D322298EE4200447353 /* lib */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		624C7D322298EE4200447353 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				628CD172229D240300E4DE78 /* GCDSocketAPI */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		624C7D3C2298EF8D00447353 /* Sorket服务器端 */ = {
+			isa = PBXGroup;
+			children = (
+				624C7D3D2298EF9100447353 /* Controller */,
+			);
+			path = "Sorket服务器端";
+			sourceTree = "<group>";
+		};
+		624C7D3D2298EF9100447353 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				624C7D3E2298EFA600447353 /* GCDSocketServerViewController.swift */,
+				624C7D3F2298EFA600447353 /* GCDSocketServerViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		624C7D422298F25000447353 /* WIFI工具 */ = {
+			isa = PBXGroup;
+			children = (
+				62F62722229E6BAA00322EDD /* RouteAddress */,
+				624C7D432298F27E00447353 /* HWWIFITools.h */,
+				624C7D442298F27E00447353 /* HWWIFITools.m */,
+			);
+			path = "WIFI工具";
+			sourceTree = "<group>";
+		};
+		624C7D46229918EA00447353 /* Sorket客户端端 */ = {
+			isa = PBXGroup;
+			children = (
+				624C7D47229918F700447353 /* Controller */,
+			);
+			path = "Sorket客户端端";
+			sourceTree = "<group>";
+		};
+		624C7D47229918F700447353 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				624C7D482299191400447353 /* GCDSocketClientViewController.swift */,
+				624C7D492299191400447353 /* GCDSocketClientViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		628CD172229D240300E4DE78 /* GCDSocketAPI */ = {
+			isa = PBXGroup;
+			children = (
+				628CD173229D240300E4DE78 /* Documentation.html */,
+				628CD174229D240300E4DE78 /* GCDAsyncUdpSocket.m */,
+				628CD175229D240300E4DE78 /* GCDAsyncSocket.m */,
+				628CD176229D240300E4DE78 /* GCDAsyncUdpSocket.h */,
+				628CD177229D240300E4DE78 /* GCDAsyncSocket.h */,
+			);
+			name = GCDSocketAPI;
+			path = "../../../../../Oc-Dome/Oc-Dome/Classes/Other/lib/GCDSocketAPI";
+			sourceTree = "<group>";
+		};
+		6299749E21F6B8BB008BE607 /* 定位工具 */ = {
+			isa = PBXGroup;
+			children = (
+				6299749F21F6B8F4008BE607 /* HWLocationManage.swift */,
+			);
+			path = "定位工具";
+			sourceTree = "<group>";
+		};
+		629974A121F6B949008BE607 /* 位置管理工具 */ = {
+			isa = PBXGroup;
+			children = (
+				629974A221F6B965008BE607 /* LocationViewController.swift */,
+				629974A321F6B965008BE607 /* LocationViewController.xib */,
+			);
+			path = "位置管理工具";
+			sourceTree = "<group>";
+		};
+		629974A721F6C07C008BE607 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				62CF1045229CC8BA00817FC0 /* Int+HWExtension.swift */,
+				629974AE21F6C229008BE607 /* UIApplication+HWExtension.swift */,
+				629974AC21F6C212008BE607 /* UIImage+HWExtension.swift */,
+				629974A821F6C09A008BE607 /* Date+HWExtension.swift */,
+				622D890722D83A420072E452 /* CGFloat+HWExtension.swift */,
+			);
+			name = Other;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		62AFD27F21CDC80200839ECA /* 文字跑马灯 */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,8 +358,27 @@
 			isa = PBXGroup;
 			children = (
 				62AFD28521CDC8CD00839ECA /* HWMarqueeView.swift */,
+				62EBFD3921F0A75A00D980CC /* HWLevelMobileView.swift */,
 			);
 			path = "跑马灯";
+			sourceTree = "<group>";
+		};
+		62F62722229E6BAA00322EDD /* RouteAddress */ = {
+			isa = PBXGroup;
+			children = (
+				62F62723229E6BAA00322EDD /* route.h */,
+				62F62724229E6BAA00322EDD /* getgateway.h */,
+				62F62725229E6BAA00322EDD /* getgateway.c */,
+			);
+			path = RouteAddress;
+			sourceTree = "<group>";
+		};
+		62F9559022DEF7E000ED55CC /* HWHUDManage(HUD管理) */ = {
+			isa = PBXGroup;
+			children = (
+				62F9559122DEF7E000ED55CC /* HWHUDManage.swift */,
+			);
+			path = "HWHUDManage(HUD管理)";
 			sourceTree = "<group>";
 		};
 		71BB30166ED565C983A0A45A /* Pods */ = {
@@ -219,6 +410,9 @@
 		83349525215F139600AB0453 /* ChlidController(子控制器) */ = {
 			isa = PBXGroup;
 			children = (
+				624C7D46229918EA00447353 /* Sorket客户端端 */,
+				624C7D3C2298EF8D00447353 /* Sorket服务器端 */,
+				629974A121F6B949008BE607 /* 位置管理工具 */,
 				62AFD27F21CDC80200839ECA /* 文字跑马灯 */,
 				839812D221A568380009D847 /* UILabelExtension */,
 				839812C621A55FF70009D847 /* HWCoverWindow(自定义遮盖) */,
@@ -320,6 +514,7 @@
 		833944F52149FB6000DBD47D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				624C7D312298EE3800447353 /* Other */,
 				83349523215F139600AB0453 /* Example(案例) */,
 				83394536214A36D000DBD47D /* Me(我的) */,
 				83394518214A324B00DBD47D /* Tool(工具类) */,
@@ -344,9 +539,9 @@
 		833944FF2149FF0F00DBD47D /* Expand(扩展) */ = {
 			isa = PBXGroup;
 			children = (
+				629974A721F6C07C008BE607 /* Other */,
 				833945002149FF0F00DBD47D /* Button(按钮相关) */,
 				833945012149FF0F00DBD47D /* Color(颜色相关) */,
-				833945022149FF0F00DBD47D /* Other */,
 				833945032149FF0F00DBD47D /* ScrollView(列表相关) */,
 				833945042149FF0F00DBD47D /* String(字符串相关) */,
 				833945052149FF0F00DBD47D /* View(视图相关) */,
@@ -371,16 +566,10 @@
 			path = "Color(颜色相关)";
 			sourceTree = "<group>";
 		};
-		833945022149FF0F00DBD47D /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
 		833945032149FF0F00DBD47D /* ScrollView(列表相关) */ = {
 			isa = PBXGroup;
 			children = (
+				62D2791F2277E23900E16008 /* UIScrollView+HWExtension.swift */,
 				8339450D214A2EBE00DBD47D /* UICollectionView+HWExtension.swift */,
 				83394511214A2EE900DBD47D /* UITableView+HWExtension.swift */,
 			);
@@ -403,6 +592,7 @@
 				83394532214A330400DBD47D /* UIView+HWExtension.swift */,
 				8339450B214A2E2600DBD47D /* UIImageView+HWExtension.swift */,
 				833547B4216EEF3900D75E0C /* UILabel+HWExtension.swift */,
+				62EBFD3B21F0B0A500D980CC /* UITextView+HWExtension.swift */,
 			);
 			path = "View(视图相关)";
 			sourceTree = "<group>";
@@ -443,6 +633,10 @@
 		83394518214A324B00DBD47D /* Tool(工具类) */ = {
 			isa = PBXGroup;
 			children = (
+				62F9559022DEF7E000ED55CC /* HWHUDManage(HUD管理) */,
+				622E51E422D31311009D0F4F /* HWCollectionViewController */,
+				624C7D422298F25000447353 /* WIFI工具 */,
+				6299749E21F6B8BB008BE607 /* 定位工具 */,
 				62AFD28421CDC8B300839ECA /* 跑马灯 */,
 				839812C321A55FC50009D847 /* HWCoverWindow */,
 				83394530214A328200DBD47D /* HWTools.swift */,
@@ -647,11 +841,15 @@
 				83394523214A325300DBD47D /* HWNoDataView.xib in Resources */,
 				839812CC21A5602E0009D847 /* subView.xib in Resources */,
 				83394525214A325300DBD47D /* 没数据缺省页@2x.png in Resources */,
+				624C7D412298EFA600447353 /* GCDSocketServerViewController.xib in Resources */,
 				8334952F215F16AE00AB0453 /* UITextFieldExtensionViewController.xib in Resources */,
 				833944CE2149F89800DBD47D /* LaunchScreen.storyboard in Resources */,
+				624C7D4B2299191400447353 /* GCDSocketClientViewController.xib in Resources */,
+				629974A521F6B965008BE607 /* LocationViewController.xib in Resources */,
 				833944CB2149F89800DBD47D /* Assets.xcassets in Resources */,
 				62AFD28321CDC83600839ECA /* HWMarqueeViewController.xib in Resources */,
 				83394526214A325300DBD47D /* 没数据缺省页@3x.png in Resources */,
+				628CD178229D240300E4DE78 /* Documentation.html in Resources */,
 				839812D121A5614B0009D847 /* HWCoverWindowViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -696,23 +894,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LHWDome/Pods-LHWDome-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LHWDome/Pods-LHWDome-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LHWDome/Pods-LHWDome-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LHWDome/Pods-LHWDome-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LHWDome/Pods-LHWDome-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -725,33 +916,52 @@
 				833945082149FF6E00DBD47D /* UIColor+HWExtension.swift in Sources */,
 				839812D021A5614B0009D847 /* HWCoverWindowViewController.swift in Sources */,
 				8334953C215F1F8100AB0453 /* UIButtonExtensionViewController.swift in Sources */,
+				629974AF21F6C229008BE607 /* UIApplication+HWExtension.swift in Sources */,
+				62EBFD3A21F0A75A00D980CC /* HWLevelMobileView.swift in Sources */,
 				8339453C214A370300DBD47D /* MeCell.swift in Sources */,
+				628CD17A229D240300E4DE78 /* GCDAsyncSocket.m in Sources */,
+				624C7D452298F27E00447353 /* HWWIFITools.m in Sources */,
 				83349536215F1CED00AB0453 /* NSMutableAttributedStringExtensionViewController.swift in Sources */,
+				622D890822D83A420072E452 /* CGFloat+HWExtension.swift in Sources */,
+				622E51E622D31338009D0F4F /* HWCollectionViewController.swift in Sources */,
 				833944FE2149FB8700DBD47D /* BaseModel.swift in Sources */,
+				629974AD21F6C212008BE607 /* UIImage+HWExtension.swift in Sources */,
+				629974A021F6B8F4008BE607 /* HWLocationManage.swift in Sources */,
+				628CD179229D240300E4DE78 /* GCDAsyncUdpSocket.m in Sources */,
 				83394533214A330400DBD47D /* UIView+HWExtension.swift in Sources */,
+				62F9559222DEF7E000ED55CC /* HWHUDManage.swift in Sources */,
 				839812D421A5686A0009D847 /* UILabelExtensionViewController.swift in Sources */,
 				62AFD28221CDC83600839ECA /* HWMarqueeViewController.swift in Sources */,
 				83394531214A328200DBD47D /* HWTools.swift in Sources */,
 				83349533215F1C9400AB0453 /* NSMutableAttributedString+HWExtension.swift in Sources */,
 				8339450A214A049C00DBD47D /* String+HWExtension.swift in Sources */,
 				8339452F214A325F00DBD47D /* HWRefresh.swift in Sources */,
+				629974A421F6B965008BE607 /* LocationViewController.swift in Sources */,
+				62EBFD3C21F0B0A500D980CC /* UITextView+HWExtension.swift in Sources */,
 				8339450C214A2E2600DBD47D /* UIImageView+HWExtension.swift in Sources */,
+				62CF1046229CC8BB00817FC0 /* Int+HWExtension.swift in Sources */,
 				8334952A215F167400AB0453 /* UITextField+HWExtension.swift in Sources */,
 				83394512214A2EE900DBD47D /* UITableView+HWExtension.swift in Sources */,
+				624C7D402298EFA600447353 /* GCDSocketServerViewController.swift in Sources */,
 				8339452C214A325F00DBD47D /* HWBaseTableViewController.swift in Sources */,
 				833944FB2149FB8700DBD47D /* MyNavigationController.swift in Sources */,
 				833547B5216EEF3900D75E0C /* UILabel+HWExtension.swift in Sources */,
 				83349528215F13AF00AB0453 /* ExampleViewController.swift in Sources */,
 				83349531215F176F00AB0453 /* UIViewController+HWExtension.swift in Sources */,
+				62F62726229E6BAA00322EDD /* getgateway.c in Sources */,
 				8339450E214A2EBE00DBD47D /* UICollectionView+HWExtension.swift in Sources */,
 				8334952E215F16AE00AB0453 /* UITextFieldExtensionViewController.swift in Sources */,
+				62D279202277E23900E16008 /* UIScrollView+HWExtension.swift in Sources */,
 				839812C521A55FD20009D847 /* HWCoverWindow.swift in Sources */,
 				83394517214A320C00DBD47D /* HomeViewController.swift in Sources */,
 				83394522214A325300DBD47D /* HWNoDataView.swift in Sources */,
+				629974A921F6C09A008BE607 /* Date+HWExtension.swift in Sources */,
 				83394535214A334D00DBD47D /* HomeCell.swift in Sources */,
 				8339453A214A36E300DBD47D /* MeViewController.swift in Sources */,
 				83349538215F1EE500AB0453 /* UIButton+HWExtension.swift in Sources */,
 				83394521214A325300DBD47D /* HWBaseCollectionViewController.swift in Sources */,
+				624C7D4A2299191400447353 /* GCDSocketClientViewController.swift in Sources */,
+				622E51E122D2E896009D0F4F /* ColorInfo.swift in Sources */,
 				839812CD21A5602E0009D847 /* subView.swift in Sources */,
 				833944FC2149FB8700DBD47D /* BaseViewController.swift in Sources */,
 				62AFD28621CDC8CD00839ECA /* HWMarqueeView.swift in Sources */,
@@ -925,7 +1135,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JSC54MXPFX;
+				DEVELOPMENT_TEAM = 239M4MMC44;
 				INFOPLIST_FILE = LHWDome/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -948,7 +1158,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JSC54MXPFX;
+				DEVELOPMENT_TEAM = 239M4MMC44;
 				INFOPLIST_FILE = LHWDome/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

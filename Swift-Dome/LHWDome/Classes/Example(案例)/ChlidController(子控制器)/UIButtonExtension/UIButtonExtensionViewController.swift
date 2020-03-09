@@ -13,10 +13,11 @@ class UIButtonExtensionViewController: BaseViewController {
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var button4: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTitle(title: "按钮扩展")
-        setBGColor()
+        hw_setTitle("按钮扩展")
+        hw_setBgColor()
         rightButton()
         setUI()
     }
@@ -33,6 +34,7 @@ class UIButtonExtensionViewController: BaseViewController {
         button3.hw_locationAdjust(buttonMode: .Bottom, spacing: 10).addAction {
             HWPrint("点击了按钮4")
         }
+        button4.hw_clickEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     }
     func rightButton() {
         let btn = UIButton.init(titleString: "测试", frame: CGRect.init(x: 0, y: 0, width: 60, height: 44)) {
@@ -46,6 +48,9 @@ class UIButtonExtensionViewController: BaseViewController {
     
     @IBAction func buttonClick(_ btn: UIButton) {
         btn.countDown(count: 60, countDownBgColor: UIColor.gray)
+    }
+    @IBAction func btn_4Click(_ sender: Any) {
+        HUDManage?.hw_showtitleHUD(name: "点击了按钮")
     }
     
 }

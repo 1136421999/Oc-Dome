@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension String {
-    // MARK: - 字符串截取
+    // MARK: 字符串截取
     /// 字符串截取
     ///
     /// - Parameters:
@@ -48,7 +48,98 @@ extension String {
         return String(self[startIndex ..< endIndex])
     }
     
-    // MARK: - 获取文字尺寸
+    // MARK: 格式化的 url
+    /// - Returns: 格式化的 url
+    func hw_encoding() -> String {
+        let url = self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        return url ?? ""
+    }
+    // MARK: 字符串裁剪 (key=nil 默认为",")
+    /// 字符串裁剪 (key=nil 默认为",")
+    func hw_tailoring(_ key: String? = nil) -> NSArray {
+        let array = self.components(separatedBy:(key?.count ?? 0) > 0 ? "," : key!) as NSArray
+        let newArray = NSMutableArray()
+        for i in 0..<array.count {
+            let str = array[i] as! String
+            if !str.isEmpty {
+                newArray.add(str)
+            }
+        }
+        return newArray
+    }
+
+    // MARK: 时间搓字符串转时间
+    /// 时间搓字符串转时间
+    func hw_toDate(_ dateFormat:String? = nil) -> String{
+        /* 例
+         let timeStamp = "1463637809"
+         HWPrint(timeStamp.hw_stringToDate(dateFormat: "yyyy年MM月dd日 HH:mm:ss"))
+         */
+        //格式话输出
+        if self.isEmpty { return "" }
+        let format = DateFormatter.init()
+        format.dateStyle = .medium
+        format.timeStyle = .short
+        if dateFormat == nil {
+            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        }else{
+            format.dateFormat = dateFormat
+        }
+        let date = format.date(from: self)
+        return String(date!.timeIntervalSince1970)
+//        let timeStamp = Int(self)
+//        //转换为时间
+//        let timeInterval:TimeInterval = TimeInterval(timeStamp!/1000)
+//        let date = Date(timeIntervalSince1970: timeInterval)
+//        let dformatter = DateFormatter()
+//        dformatter.dateFormat = dateFormat // "yyyy年MM月dd日 HH:mm:ss"
+//        return dformatter.string(from: date)
+    }
+    // MARK: 将字符转为整数值
+    /// 将字符转为整数值
+    func hw_toASCII() -> Int {
+        var number:Int = 0
+        for code in self.unicodeScalars {
+            number = Int(code.value)
+        }
+        return Int(number)
+    }
+    // MARK: json字符串数组转数组
+    /// json字符串数组转数组
+    ///
+    /// - Returns:
+    func hw_jsonToArray() -> [String] {
+        if let data = self.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+            if let array = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String] {
+                return array ?? [String]()
+            } else {
+                return [String]()
+            }
+        } else {
+            return [String]()
+        }
+    }
+    // MARK: html文本转富文本
+    /// html文本转富文本
+    ///
+    /// - Returns: 富文本
+    func hw_HTMLToAttributedString() -> NSAttributedString {
+        do{
+            guard let data = self.data(using: String.Encoding.unicode, allowLossyConversion: true) else {
+                return NSMutableAttributedString(string: self)
+            }
+            var options = [NSAttributedString.DocumentReadingOptionKey : Any]()
+            options[NSAttributedString.DocumentReadingOptionKey.documentType] = NSAttributedString.DocumentType.html
+            let attrStr = try NSAttributedString(data: data, options: options, documentAttributes: nil)
+            return attrStr
+        }catch let error as NSError {
+            print(error.localizedDescription)
+            return NSMutableAttributedString(string: self)
+        }
+    }
+}
+extension String {
+    // MARK: 获取文字尺寸
     /// 获取文字尺寸
     ///
     /// - Parameters:
@@ -81,57 +172,6 @@ extension String {
     func hw_getWidth(height: CGFloat, font: CGFloat) -> CGFloat {
         let rect = self.boundingRect(with: CGSize.init(width: 100000, height: height), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: font)], context: nil)
         return rect.size.width
-    }
-    // MARK: - 字符串转数组
-    /// 字符串转数组
-    // 例:"qwert".hw_toArray() -> ["q","w","e","r","t"]
-    func hw_toArray() -> [String] {
-        let num = count
-        if !(num > 0) { return [""] }
-        var arr: [String] = []
-        for i in 0..<num {
-            let tempStr: String = self[self.index(self.startIndex, offsetBy: i)].description
-            arr.append(tempStr)
-        }
-        return arr
-    }
-    
-    // MARK: - 格式化的 url
-    /// - Returns: 格式化的 url
-    func hw_encoding() -> String {
-        let url = self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        return url ?? ""
-    }
-    // MARK: - 字符串裁剪 (key=nil 默认为",")
-    /// 字符串裁剪 (key=nil 默认为",")
-    func hw_tailoring(_ key: String? = nil) -> NSArray {
-        let array = self.components(separatedBy:key == nil ? "," : key!) as NSArray
-        let newArray = NSMutableArray()
-        for i in 0..<array.count {
-            let str = array[i] as! String
-            if !str.isEmpty {
-                newArray.add(str)
-            }
-        }
-        return newArray
-    }
-
-    // MARK: - 时间搓字符串转时间
-    /// 时间搓字符串转时间
-    func hw_toDate(dateFormat:String) -> String{
-        /* 例
-         let timeStamp = "1463637809"
-         HWPrint(timeStamp.hw_stringToDate(dateFormat: "yyyy年MM月dd日 HH:mm:ss"))
-         */
-        //格式话输出
-        if self.isEmpty { return "" }
-        let timeStamp = Int(self)
-        //转换为时间
-        let timeInterval:TimeInterval = TimeInterval(timeStamp!/1000)
-        let date = Date(timeIntervalSince1970: timeInterval)
-        let dformatter = DateFormatter()
-        dformatter.dateFormat = dateFormat // "yyyy年MM月dd日 HH:mm:ss"
-        return dformatter.string(from: date)
     }
 }
 
@@ -170,5 +210,112 @@ extension String {
         let top =  self.hw_substring(from: 0, to: 2)
         let buttom = self.hw_substring(from: self.count-4)
         return top + "****" + buttom
+    }
+}
+
+extension String {
+    /// 获取显示时间
+    func hw_getShowTime(_ dateFormat:String? = nil) -> String {
+        var result:String = ""
+        if self.count == 0 {
+            return self
+        }
+        let datefmatter = DateFormatter()
+        if dateFormat?.count == 0 {
+            datefmatter.dateFormat = dateFormat
+        } else {
+            datefmatter.dateFormat="yyyy-MM-dd HH:mm:ss"
+        }
+        
+        let currentDate = Date()
+        let currenttimeInterval:TimeInterval = currentDate.timeIntervalSince1970
+        
+        let date = datefmatter.date(from: self) // 传入时间
+        let timeInterval:TimeInterval = date!.timeIntervalSince1970
+        
+        let num = (currenttimeInterval-timeInterval)/3600
+        if num < 24 { // 今天
+            result = Int(timeInterval).hw_stringToDate(dateFormat: "HH:mm")
+        } else if num < 2*24 { // 昨天
+            result = "昨天" + Int(timeInterval).hw_stringToDate(dateFormat: "HH:mm")
+        } else if num < 3*24 { // 前天
+            result = "前天" + Int(timeInterval).hw_stringToDate(dateFormat: "HH:mm")
+        } else if num < 365*24 { // 今年
+            result = Int(timeInterval).hw_stringToDate(dateFormat: "MM-dd HH:mm")
+        } else {
+            result = Int(timeInterval).hw_stringToDate(dateFormat: "yyyy-MM-dd HH:mm")
+        }
+        return result
+    }
+}
+// MARK: - 获取首字母
+extension String {
+    /// 获取首字母
+    func hw_getFirstLetter() -> String {
+        //转变成可变字符串
+        let mutableString = NSMutableString.init(string: self)
+        //将中文转换成带声调的拼音
+        CFStringTransform(mutableString as CFMutableString, nil, kCFStringTransformToLatin, false)
+        //去掉声调
+        let pinyinString = mutableString.folding(options: String.CompareOptions.diacriticInsensitive, locale: NSLocale.current)
+        //将拼音首字母换成大写
+        let strPinYin = polyphoneStringHandle(nameString: self, pinyinString: pinyinString).uppercased()
+        //截取大写首字母
+        let firstString = strPinYin.substring(to: strPinYin.index(strPinYin.startIndex, offsetBy: 1))
+        //判断首字母是否为大写
+        let regexA = "^[A-Z]$"
+        let predA = NSPredicate.init(format: "SELF MATCHES %@", regexA)
+        return predA.evaluate(with: firstString) ? firstString : "#"
+    }
+    
+    //多音字处理，根据需要添自行加
+    func polyphoneStringHandle(nameString: String, pinyinString: String) -> String {
+        if nameString.hasPrefix("长") {return "chang"}
+        if nameString.hasPrefix("沈") {return "shen"}
+        if nameString.hasPrefix("厦") {return "xia"}
+        if nameString.hasPrefix("地") {return "di"}
+        if nameString.hasPrefix("重") {return "chong"}
+        return pinyinString
+    }
+}
+// MARK: - 获取位置
+extension String {
+    func hw_getNsRange(_ sub:String) -> NSRange {
+        if let range = self.range(of: sub)  {// Range 类型
+            return NSRange(range, in: self)
+        }
+        return NSRange.init(location: 0, length: 0)
+    }
+}
+// MARK: - 类型转换
+extension String {
+    public func hw_cgFloat(locale: Locale = .current) -> CGFloat {
+        if self.count == 0 {
+            return 0
+        }
+        let formatter = NumberFormatter()
+        formatter.locale = locale
+        formatter.allowsFloats = true
+        if let float = formatter.number(from: self) as? CGFloat {
+            return float
+        } else {
+            return 0
+        }
+    }
+    public var hw_int: Int? {
+        return Int(self)
+    }
+    public func hw_float(locale: Locale = .current) -> Float {
+        if self.count == 0 {
+            return 0
+        }
+        let formatter = NumberFormatter()
+        formatter.locale = locale
+        formatter.allowsFloats = true
+        if let float = formatter.number(from: self)?.floatValue {
+            return float
+        } else {
+            return 0
+        }
     }
 }

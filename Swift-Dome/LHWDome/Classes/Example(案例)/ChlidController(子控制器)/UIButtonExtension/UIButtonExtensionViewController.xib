@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,6 +16,7 @@
                 <outlet property="button1" destination="MqM-8r-srB" id="tTf-Xy-c8u"/>
                 <outlet property="button2" destination="fAh-2l-nEJ" id="eul-1K-ceq"/>
                 <outlet property="button3" destination="MYr-O6-Ss7" id="rGe-Cn-Ddp"/>
+                <outlet property="button4" destination="Eq0-Sw-vzX" id="ZNp-zW-wCT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -83,10 +84,26 @@
                         <action selector="buttonClick:" destination="-1" eventType="touchUpInside" id="zdR-rB-jue"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eq0-Sw-vzX">
+                    <rect key="frame" x="152.5" y="440" width="70" height="30"/>
+                    <color key="backgroundColor" red="0.98823529409999999" green="0.58823529409999997" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="Wft-zv-bSY"/>
+                        <constraint firstAttribute="height" constant="30" id="YOx-ad-LVA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="点击区域">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="btn_4Click:" destination="-1" eventType="touchUpInside" id="etK-LB-IMr"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="9Zi-aa-MYn" firstAttribute="top" secondItem="MYr-O6-Ss7" secondAttribute="bottom" constant="30" id="0Uo-xZ-HT4"/>
+                <constraint firstItem="Eq0-Sw-vzX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8Gr-Pz-bQj"/>
                 <constraint firstItem="MqM-8r-srB" firstAttribute="top" secondItem="LlH-kM-2xQ" secondAttribute="bottom" constant="20" id="C7Q-jT-o0y"/>
                 <constraint firstItem="MYr-O6-Ss7" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Kfu-Fi-nr2"/>
                 <constraint firstItem="9Zi-aa-MYn" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="N6c-Nr-j78"/>
@@ -95,6 +112,7 @@
                 <constraint firstItem="LlH-kM-2xQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TiS-V7-6Nd"/>
                 <constraint firstItem="LlH-kM-2xQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="ZSm-Mv-J20"/>
                 <constraint firstItem="MqM-8r-srB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hS8-T0-b8v"/>
+                <constraint firstItem="Eq0-Sw-vzX" firstAttribute="top" secondItem="9Zi-aa-MYn" secondAttribute="bottom" constant="40" id="wjJ-J1-XJc"/>
                 <constraint firstItem="MYr-O6-Ss7" firstAttribute="top" secondItem="fAh-2l-nEJ" secondAttribute="bottom" constant="20" id="y5m-eN-AcL"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

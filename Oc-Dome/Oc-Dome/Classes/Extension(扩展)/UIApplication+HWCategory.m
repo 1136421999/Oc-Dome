@@ -16,7 +16,6 @@
     return app_Version;
 }
 + (NSDictionary *)hw_getinfoDictionary {
-    
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     return infoDictionary;
 }

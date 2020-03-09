@@ -18,6 +18,16 @@ enum HWGradientDirection{ // 渐变方向
 }
 
 extension UIColor {
+    
+    //返回随机颜色
+    open class var randomColor : UIColor {
+        get {
+            let red = CGFloat(arc4random()%256)/255.0
+            let green = CGFloat(arc4random()%256)/255.0
+            let blue = CGFloat(arc4random()%256)/255.0
+            return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+        }
+    }
     /// 颜色16字符串进制转颜色
     class func hw_color(hex:String, alpha:CGFloat? = nil) -> UIColor {
         var cString = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
@@ -103,7 +113,6 @@ extension String {
             print("输入的String类型位数不足6位直接转为红色")
             return UIColor.red
         }
-
         return UIColor.hw_color(hex: hexNum, alpha: alpha == nil ? 1 : alpha!)
     }
 }

@@ -17,7 +17,10 @@
 #import "HWCategory.h"
 #import "Macro.h"
 #import "Api.h"
-
+#import "BaseViewController.h"
 #import <MJExtension/MJExtension.h>
-
+#import <MJRefresh/MJRefresh.h>
+#import "HWCollectionViewController.h"
+#import "HWPictureManager.h"
+#import "HWAttributesLabel.h"
 #endif /* Oc_Dome_pch */

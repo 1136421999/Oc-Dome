@@ -12,8 +12,8 @@ class UILabelExtensionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBGColor()
-        setTitle(title: "label点击事件")
+        hw_setBgColor()
+        hw_setTitle("label点击事件")
         var label : UILabel
         label = UILabel.init(frame: CGRect.init(x: 10, y: 100, width: 350, height: 100))
         let str = "这是一个swfit Label,用与给Label扩展点击事件"

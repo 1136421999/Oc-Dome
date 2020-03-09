@@ -45,6 +45,9 @@ NS_ASSUME_NONNULL_BEGIN
  @return 宽度
  */
 - (CGFloat)hw_getWidthWithFont:(CGFloat)font addMaxHeight:(CGFloat)maxHeight;
+
+/** 快捷转富文本 */
+- (NSMutableAttributedString *)hw_toAttributed;
 @end
 
 NS_ASSUME_NONNULL_END

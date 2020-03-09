@@ -187,7 +187,7 @@ public extension UIView{
         self.layer.masksToBounds = true
         let subLayer = CALayer()
         let fixframe = self.frame
-        let newFrame = CGRect(x: fixframe.minX-(375-HWScreenW())/2, y: fixframe.minY, width: fixframe.width, height: fixframe.height)
+        let newFrame = CGRect(x: fixframe.minX-(375-HW_ScreenW)/2, y: fixframe.minY, width: fixframe.width, height: fixframe.height)
         subLayer.frame = newFrame
         subLayer.cornerRadius = self.height/2
         subLayer.backgroundColor = UIColor.white.cgColor
@@ -293,5 +293,56 @@ extension UIView {
         rect.size.width *= scale
         rect.size.height *= scale
         self.frame = rect
+    }
+}
+
+// MARK: - 手势相关
+extension UIView {
+    // 改进写法【推荐】
+    private struct HWViewRuntimeKey {
+        static let actionGestureBlock = UnsafeRawPointer.init(bitPattern: "viewActionGestureBlock".hashValue)
+        /// ...其他Key声明
+    }
+    /// 运行时关联
+    private var actionGestureBlock: (()->())? {
+        set {
+            objc_setAssociatedObject(self, UIView.HWViewRuntimeKey.actionGestureBlock!, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+        }
+        get {
+            return objc_getAssociatedObject(self, UIView.HWViewRuntimeKey.actionGestureBlock!) as? (()->())
+        }
+    }
+    /// 点击回调
+    @objc private func viewGestureTrigger(){
+        actionGestureBlock?()
+    }
+    /// 添加点击手势
+    func hw_addTap(action:@escaping (()->())) {
+        isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(viewGestureTrigger))
+        self.actionGestureBlock = action
+        tap.numberOfTouchesRequired = 1//点击出点需要几个点
+        tap.numberOfTapsRequired = 1//连续点击几次才能引发手势事件
+        self.addGestureRecognizer(tap)
+    }
+    /// 添加长按手势
+    func hw_addLongPress(action:@escaping (()->())) {
+        isUserInteractionEnabled = true
+        let longPress = UILongPressGestureRecognizer.init(target: self, action: #selector(viewGestureTrigger))
+        self.actionGestureBlock = action
+        longPress.numberOfTouchesRequired = 1 //点击出点需要几个点
+        longPress.numberOfTapsRequired = 0 //连续点击几次才能引发手势事件
+        self.addGestureRecognizer(longPress)
+    }
+}
+
+extension UIView {
+    /// 可以获取到父容器的控制器的方法,就是这个黑科技.
+    func hw_viewController() -> UIViewController? {
+        var vc: UIResponder = self
+        while vc.isKind(of: UIViewController.self) != true {
+            vc = vc.next!
+        }
+        return vc as? UIViewController
     }
 }

@@ -14,7 +14,8 @@ class UITextFieldExtensionViewController: BaseViewController {
     @IBOutlet weak var tf: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTitle(title: "UITextField扩展")
+        hw_setTitle("UITextField扩展")
+        moneyTF.placeholderColor = UIColor.black
         moneyTF.hw.isMoeeyEidtor(true).endEditingBlock = { (text) in
             print("输入金额为:\(text)")
         }
@@ -34,5 +35,34 @@ class UITextFieldExtensionViewController: BaseViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
-
+//    func createOverlay(frame : CGRect) {
+//        let overlayView = UIView(frame: frame)
+//        overlayView.alpha = 0.6
+//        overlayView.backgroundColor = UIColor.black
+//        self.view.addSubview(overlayView)
+//        
+//        let maskLayer = CAShapeLayer()
+//        
+//        // Create a path with the rectangle in it.
+//        var path = CGMutablePath()
+//        
+//        let radius : CGFloat = 50.0
+//        let xOffset : CGFloat = 10
+//        let yOffset : CGFloat = 10
+//        
+//        CGPath.
+//        CGPathAddArc(path, nil, overlayView.frame.width - radius/2 - xOffset, yOffset, radius, 0.0, 2 * 3.14, false)
+//        
+//        CGPathAddRect(path, nil, CGRectMake(0, 0, overlayView.frame.width, overlayView.frame.height))
+//        
+//        
+//        maskLayer.backgroundColor = UIColor.black.cgColor
+//        
+//        maskLayer.path = path;
+//        maskLayer.fillRule = kCAFillRuleEvenOdd
+//        
+//        // Release the path since it's not covered by ARC.
+//        overlayView.layer.mask = maskLayer
+//        overlayView.clipsToBounds = true
+//    }
 }

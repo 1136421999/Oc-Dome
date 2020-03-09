@@ -21,6 +21,9 @@
  */
 - (void)setBGColor;
 - (void)setBGColor:(UIColor *)color;
+
+/** 快速设置导航栏颜色 */
+- (UIViewController *(^)(UIColor *color))hw_setNavColor;
 /**
  快速设置标题名称
  name: 标题名称

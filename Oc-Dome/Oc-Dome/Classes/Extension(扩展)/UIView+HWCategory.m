@@ -167,6 +167,18 @@ static NSString *hw_GestureActionKey = @"hw_GestureActionKey";
     self.layer.borderWidth = width;
     self.layer.borderColor = [UIColor blackColor].CGColor;
 }
+- (UIView * _Nonnull (^)(CGFloat))hw_setBordeWidthr {
+    return ^(CGFloat width) {
+        [self setBorderWidth:width];
+        return self;
+    };
+}
+- (UIView * _Nonnull (^)(UIColor * _Nonnull))hw_setBordeColor {
+    return ^(UIColor *color) {
+        [self setBorderColor:color];
+        return self;
+    };
+}
 - (void)addBorderWithWidth:(CGFloat)width borderColor:(UIColor *)borderColor {
     self.layer.borderWidth = width;
     self.layer.borderColor = borderColor.CGColor;
@@ -174,6 +186,13 @@ static NSString *hw_GestureActionKey = @"hw_GestureActionKey";
 - (void)addRoundedCornersWithRadius:(CGFloat)radius {
     self.layer.cornerRadius = radius;
     self.layer.masksToBounds = YES;
+}
+- (UIView * _Nonnull (^)(CGFloat))hw_setRadius {
+    return ^(CGFloat radius) {
+        self.layer.cornerRadius = radius;
+        self.layer.masksToBounds = YES;
+        return self;
+    };
 }
 - (void)addRounded {
     self.layer.cornerRadius = self.height/2;
@@ -238,6 +257,7 @@ static NSString *hw_GestureActionKey = @"hw_GestureActionKey";
     [self.layer addSublayer:shapeLayer];
 }
 
+#pragma mark - 判断View是否显示在屏幕上
 /**判断View是否显示在屏幕上*/
 - (BOOL)hw_isDisplayedInScreen {
     if(self == nil){
@@ -269,7 +289,6 @@ static NSString *hw_GestureActionKey = @"hw_GestureActionKey";
     return YES;
 }
 
-
 + (id)hw_loadViewFromNib {
     UIView *view = [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
     if (view) {
@@ -278,8 +297,7 @@ static NSString *hw_GestureActionKey = @"hw_GestureActionKey";
         return [[UIView alloc] init];
     }
 }
-
-
+#pragma mark - 添加手势相关
 - (void)hw_addTapGesture:(void(^)(void))action {
     self.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickGesture)];
@@ -302,4 +320,14 @@ static NSString *hw_GestureActionKey = @"hw_GestureActionKey";
     return objc_getAssociatedObject(self, (__bridge const void * _Nonnull)(hw_GestureActionKey));
 }
 
+/// 可以获取到父容器的控制器的方法,就是这个黑科技.
+- (UIViewController *)viewController {
+    for (UIView *view = self; view; view = view.superview) {
+        UIResponder *nextResponder = [view nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController *)nextResponder;
+        }
+    }
+    return nil;
+}
 @end

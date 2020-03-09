@@ -45,7 +45,6 @@ NS_ASSUME_NONNULL_BEGIN
 /** 可视化设置圆角 */
 @property (nonatomic, assign)IBInspectable CGFloat cornerRadius;
 
-
 /**
  快速给View添加4边阴影
  参数:阴影透明度，默认0
@@ -57,6 +56,8 @@ NS_ASSUME_NONNULL_BEGIN
  参数:边框宽度
  */
 - (void)addBorderWithWidth:(CGFloat)width;
+- (UIView *(^)(CGFloat width))hw_setBordeWidthr;
+- (UIView *(^)(UIColor * color))hw_setBordeColor;
 /**
  快速给View添加4边框
  width:边框宽度
@@ -68,6 +69,7 @@ NS_ASSUME_NONNULL_BEGIN
  参数:圆角半径
  */
 - (void)addRoundedCornersWithRadius:(CGFloat)radius;
+- (UIView *(^)(CGFloat radius))hw_setRadius;
 - (void)addRounded;
 /**
  快速给View添加圆角
@@ -99,6 +101,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (id)hw_loadViewFromNib;
 /** 快速添加点击手势 */
 - (void)hw_addTapGesture:(void(^)(void))action;
+/// 可以获取到父容器的控制器的方法,就是这个黑科技.
+- (UIViewController *)viewController;
 @end
 
 NS_ASSUME_NONNULL_END

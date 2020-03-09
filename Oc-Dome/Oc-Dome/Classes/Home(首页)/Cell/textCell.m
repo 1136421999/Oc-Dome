@@ -13,6 +13,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+//    self.contentView.hw_setBordeWidthr(0.5).hw_setBordeColor([UIColor redColor]);
+//    self.img.image = [UIImage imageNamed:@"tabbar5"];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

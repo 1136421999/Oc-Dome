@@ -4,8 +4,10 @@
 target 'LHWDome' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'Alamofire'                      #网络请求
-  pod 'HandyJSON', '~> 4.2.0'          #模型
-  pod 'Kingfisher'                     #图片请求类
-  pod 'MJRefresh'                      #刷新类
+  pod 'Alamofire'                                      #网络请求
+  pod 'HandyJSON', '~> 4.2.0'                          #模型
+  pod 'Kingfisher', '~> 4.10.1'                        #图片请求类
+  pod 'MJRefresh'                                      #刷新类
+  pod 'SnapKit', '~> 4.2.0'                            #约束布局
+  pod 'EmptyDataSet-Swift', '~> 4.2.0'                 #空界面
 end

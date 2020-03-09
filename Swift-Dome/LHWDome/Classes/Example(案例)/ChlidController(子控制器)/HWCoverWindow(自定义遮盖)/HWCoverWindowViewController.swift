@@ -13,8 +13,8 @@ class HWCoverWindowViewController: UIViewController {
     let cover = HWCoverWindow.init(frame: CGRect.init(x: 0, y: 120, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height-120))
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTitle(title: "自定义遮盖")
-        setBGColor()
+        hw_setTitle("自定义遮盖")
+        hw_setBgColor()
         // 成功代理
         cover.dataSource = self
         // 遮盖区域是否相应手势

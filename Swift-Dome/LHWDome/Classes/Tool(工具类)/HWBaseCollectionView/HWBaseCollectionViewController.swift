@@ -17,10 +17,6 @@ enum ReusableViewType{ // cell 注册类型
     case Footer // 尾部
 }
 
-/// 检查是否是iPhoneX
-private let hw_isiPhoneX: Bool = (UIScreen.main.bounds.height == 812 ? true : false)
-private let hw_ScreenWidth: CGFloat = UIScreen.main.bounds.size.width
-private let hw_ScreenHeight: CGFloat = UIScreen.main.bounds.size.height
 class HWBaseCollectionViewController: BaseViewController {
     
     // MARK: - 刷新相关
@@ -109,18 +105,13 @@ class HWBaseCollectionViewController: BaseViewController {
         // myflowLayout.sectionHeadersPinToVisibleBounds = true // 头部悬浮
         myflowLayout.minimumLineSpacing = 0
         myflowLayout.minimumInteritemSpacing = 0
-        myflowLayout.headerReferenceSize = CGSize(width: hw_ScreenWidth, height: 0)
-        myflowLayout.footerReferenceSize = CGSize(width: hw_ScreenHeight, height: 0)
-        let collectionView = UICollectionView(frame:CGRect(x: 0, y: 0, width: HWScreenW(), height: HWScreenH()-hw_navigationH()), collectionViewLayout: myflowLayout)
-//        if #available(iOS 11.0, *) {
-//            collectionView.contentInsetAdjustmentBehavior = .never
-//        } else {
-//            self.automaticallyAdjustsScrollViewInsets = false
-//        }
+        myflowLayout.headerReferenceSize = CGSize(width: HW_ScreenW, height: 0)
+        myflowLayout.footerReferenceSize = CGSize(width: HW_ScreenW, height: 0)
+        let collectionView = UICollectionView(frame:CGRect(x: 0, y: 0, width: HW_ScreenW, height: HW_ScreenH-hw_navigationH), collectionViewLayout: myflowLayout)
         if self.hidesBottomBarWhenPushed == false { // tabBar没隐藏
-            collectionView.height -= hw_tabBarH()
+            collectionView.height -= hw_tabBarH
         } else { // tabBar隐藏
-            if isiPhoneX() {
+            if isiPhoneX {
                 collectionView.height -= 34
             }
         }

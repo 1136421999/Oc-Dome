@@ -15,6 +15,7 @@ extension UIButton{
     // 改进写法【推荐】
     private struct RuntimeKey {
         static let actionBlock = UnsafeRawPointer.init(bitPattern: "actionBlock".hashValue)
+        static let clickEdgeInsets = UnsafeRawPointer.init(bitPattern: "clickEdgeInsets".hashValue)
         /// ...其他Key声明
     }
     /// 运行时关联
@@ -24,6 +25,15 @@ extension UIButton{
         }
         get {
             return objc_getAssociatedObject(self, UIButton.RuntimeKey.actionBlock!) as? buttonClick
+        }
+    }
+    /// 需要扩充的点击边距
+    public var hw_clickEdgeInsets: UIEdgeInsets? {
+        set {
+            objc_setAssociatedObject(self, UIButton.RuntimeKey.clickEdgeInsets!, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY)
+        }
+        get {
+            return objc_getAssociatedObject(self, UIButton.RuntimeKey.clickEdgeInsets!) as? UIEdgeInsets ?? UIEdgeInsets.zero
         }
     }
     /// 点击回调
@@ -73,6 +83,19 @@ extension UIButton{
     convenience init(titleString:String, frame:CGRect, action: @escaping buttonClick){
         self.init(titleString: titleString, action: action)
         self.frame = frame
+    }
+    
+    open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        super.point(inside: point, with: event)
+        var bounds = self.bounds
+        if (hw_clickEdgeInsets != nil) {
+            let x: CGFloat = -(hw_clickEdgeInsets?.left ?? 0)
+            let y: CGFloat = -(hw_clickEdgeInsets?.top ?? 0)
+            let width: CGFloat = bounds.width + (hw_clickEdgeInsets?.left ?? 0) + (hw_clickEdgeInsets?.right ?? 0)
+            let height: CGFloat = bounds.height + (hw_clickEdgeInsets?.top ?? 0) + (hw_clickEdgeInsets?.bottom ?? 0)
+            bounds = CGRect(x: x, y: y, width: width, height: height) //负值是方法响应范围
+        }
+        return bounds.contains(point)
     }
 }
 

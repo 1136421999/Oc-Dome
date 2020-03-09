@@ -12,8 +12,8 @@ class NSMutableAttributedStringExtensionViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTitle(title: "富文本扩展")
-        setBGColor()
+        hw_setTitle("富文本扩展")
+        hw_setBgColor()
         setUI()
     }
 
@@ -70,7 +70,7 @@ class NSMutableAttributedStringExtensionViewController: BaseViewController {
         view.addSubview(textLabel8)
         textLabel8.attributedText = str.hw_toAttribute()
             .hw_addUnderLine(.styleSingle)
-            .hw_underLineColor(UIColor.yellow).hw_addAttribute("我是拼接的".hw_toAttribute().hw_color(UIColor.red))
+            .hw_underLineColor(UIColor.yellow) + "我是拼接的".hw_toAttribute().hw_color(UIColor.red)
     }
     
 

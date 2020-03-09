@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="MeHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="默认头像" translatesAutoresizingMaskIntoConstraints="NO" id="rpu-7s-MIK">
+                    <rect key="frame" x="15" y="15" width="55" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="rpu-7s-MIK" secondAttribute="height" id="4WF-qc-msK"/>
+                        <constraint firstAttribute="width" constant="55" id="5IY-4g-m2r"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="27.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="橘子郡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUY-GE-zxH">
+                    <rect key="frame" x="85" y="32.5" width="49" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="XUY-GE-zxH" firstAttribute="centerY" secondItem="rpu-7s-MIK" secondAttribute="centerY" id="1E6-uH-ocS"/>
+                <constraint firstItem="rpu-7s-MIK" firstAttribute="leading" secondItem="9Gg-ye-v9C" secondAttribute="leading" constant="15" id="3yf-Za-D47"/>
+                <constraint firstItem="XUY-GE-zxH" firstAttribute="leading" secondItem="rpu-7s-MIK" secondAttribute="trailing" constant="15" id="JOd-2J-Pf5"/>
+                <constraint firstAttribute="bottom" secondItem="rpu-7s-MIK" secondAttribute="bottom" constant="30" id="ouf-cU-RKJ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="9Gg-ye-v9C"/>
+            <connections>
+                <outlet property="imageView" destination="rpu-7s-MIK" id="LF3-Pp-k3q"/>
+                <outlet property="label" destination="XUY-GE-zxH" id="Dn8-e3-Z9I"/>
+            </connections>
+            <point key="canvasLocation" x="101.59999999999999" y="41.379310344827587"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="默认头像" width="72" height="72"/>
+    </resources>
+</document>

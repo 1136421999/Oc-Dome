@@ -11,18 +11,29 @@ import UIKit
 class HWMarqueeViewController: UIViewController {
 
     @IBOutlet weak var marquessView: HWMarqueeView!
+    @IBOutlet weak var mainView: HWLevelMobileView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBGColor()
-        setTitle(title: "文字跑马灯")
+        hw_setBgColor()
+        hw_setTitle("文字跑马灯")
         marquessView.dataSource = self
         marquessView.clickBlock = { (index) in
             print("点击了第\(index)个")
         }
         marquessView.reloadData()
+        mainView.content = "具体来说，潮流服饰/家居用品/酒品饮料/家用电器/零食小吃/汽车用品/医疗保健/全部分类按钮没有响应"
     }
-
-
+    var tag = 0
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if tag == 0 {
+            tag = 1
+            mainView.content = "垃圾接口 害我加班....."
+        } else {
+            tag = 0
+            mainView.content = "走马灯 走马灯 走马灯 走马灯 走马灯 走马灯 走马灯 走马灯......"
+        }
+    }
 
 }
 extension HWMarqueeViewController: HWMarqueeViewDataSource {

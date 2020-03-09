@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HWMarqueeViewController" customModule="LHWDome" customModuleProvider="target">
             <connections>
+                <outlet property="mainView" destination="9vj-LL-ifl" id="GIk-9d-iC1"/>
                 <outlet property="marquessView" destination="rP0-6k-9Hv" id="Lgv-vL-maM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,10 +30,38 @@
                         <constraint firstAttribute="height" constant="40" id="X8H-PL-H0C"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vj-LL-ifl" customClass="HWLevelMobileView" customModule="LHWDome" customModuleProvider="target">
+                    <rect key="frame" x="15" y="233.5" width="345" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="6so-TP-0Kz"/>
+                    </constraints>
+                </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CdM-NQ-2Yg">
+                    <rect key="frame" x="15" y="40" width="345" height="100"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="mbG-9F-pdx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                            <color key="value" red="1" green="0.74901960779999999" blue="0.054901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="测试"/>
+                    </userDefinedRuntimeAttributes>
+                </textView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="CdM-NQ-2Yg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="6TD-3w-tj7"/>
                 <constraint firstItem="rP0-6k-9Hv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ACp-yq-lwg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9vj-LL-ifl" secondAttribute="trailing" constant="15" id="An0-37-Mv2"/>
+                <constraint firstItem="9vj-LL-ifl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="GFy-HF-Sk0"/>
+                <constraint firstItem="rP0-6k-9Hv" firstAttribute="top" secondItem="9vj-LL-ifl" secondAttribute="bottom" constant="40" id="TPq-sg-Xt1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CdM-NQ-2Yg" secondAttribute="trailing" constant="15" id="TfX-u3-c3P"/>
+                <constraint firstItem="CdM-NQ-2Yg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="jtV-RJ-bh2"/>
                 <constraint firstItem="rP0-6k-9Hv" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="s80-Vx-4ao"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

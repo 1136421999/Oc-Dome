@@ -11,12 +11,36 @@
 
 @implementation UIViewController (HWCategory)
 - (void)setBGColor {
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = hw_BGColor;
 }
 - (void)setBGColor:(UIColor *)color {
     self.view.backgroundColor = color;
 }
 
+- (UIViewController *(^)(UIColor *))hw_setNavColor {
+    return ^(UIColor *color) {
+        [self setNavColor:color];
+        return self;
+    };
+}
+- (void)setNavColor:(UIColor *)color {
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage hw_imageWithColor:color] forBarMetrics:UIBarMetricsDefault];
+    if (color != [UIColor whiteColor]) {
+        self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
+    }
+    [UIApplication sharedApplication].statusBarStyle = (color == [UIColor whiteColor] ? UIStatusBarStyleDefault : UIStatusBarStyleLightContent);
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    //    dic[NSFontAttributeName] = [UIFont systemFontOfSize:18];
+    UIColor *setColor = (color == [UIColor whiteColor] ? [UIColor blackColor] : [UIColor whiteColor]);
+    if (color == [UIColor clearColor]) {
+        [self.navigationController.navigationBar setTranslucent:YES];
+    } else {
+        [self.navigationController.navigationBar setTranslucent:NO];
+    }
+    dic[NSForegroundColorAttributeName] = setColor;
+    self.navigationController.navigationBar.titleTextAttributes = dic;
+    self.navigationController.navigationBar.tintColor = setColor;
+}
 - (void)setTitle:(NSString *)title {
     self.navigationItem.title = title;
 }

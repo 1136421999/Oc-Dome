@@ -22,7 +22,7 @@
 @implementation HWPictureManager
 
 - (void)hw_showTakingAndPhotoAlbum:(void(^)(UIImage *image))action {
-    [HWAlertManager hw_showSheet:nil message:nil actionTitles:@[@"拍照上传",@"本地上传"] actionBlock:^(NSInteger index) {
+    [HWAlertManager hw_showSheet:nil message:nil actionTitles:@[@"相机",@"相册"] actionBlock:^(NSInteger index) {
         if (index == 0) {
             [self hw_showTakingPictures:^(UIImage *image) {
                 action(image);

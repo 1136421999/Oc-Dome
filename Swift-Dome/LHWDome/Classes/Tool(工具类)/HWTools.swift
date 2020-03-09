@@ -10,52 +10,36 @@ import Foundation
 import UIKit
 import AVFoundation
 import AVKit
-//import RxSwift
-//import RxCocoa
-
-//import Moya
-//import SVProgressHUD
 
 
 // MARK: - 打印相关
 func HWPrint<T>(_ message: T, // 添加_ 可以隐藏参数提示
-    file: String = #file,
-    method: String = #function,
-    line: Int = #line) {
+    file: String = #file, // 文件名
+    method: String = #function, // 方法名
+    line: Int = #line) { // 行数
+    #if DEBUG
     print("\((file as NSString).lastPathComponent)[\(line)], \(method): \(message)")
+    #endif
 }
 
-/// 获取导航栏高度
-func hw_navigationH() -> CGFloat {
-    if isiPhoneX() {
-       return 88
-    }
-    return 64
-}
-/// 获取tabBar高度
-func hw_tabBarH() -> CGFloat {
-    if isiPhoneX() {
-        return 83
-    }
-    return 49
-}
-/// 屏幕比例高度
-func HW_ProportionH(height:CGFloat) -> CGFloat {
-    return HW_ScreenW*height/375
-}
-// MARK: - 屏幕尺寸相关
+/// 是否是x
+let isiPhoneX = (UIApplication.shared.statusBarFrame.height > 20 ? true : false)
 /// 屏幕高
 let HW_ScreenH = UIScreen.main.bounds.size.height
 /// 屏幕宽
 let HW_ScreenW = UIScreen.main.bounds.size.width
-/// 屏幕宽
-func HWScreenW() -> CGFloat {
-    return  UIScreen.main.bounds.size.width
+/// 获取导航栏高度
+let hw_navigationH : CGFloat = (isiPhoneX ? 88 : 64)
+/// 获取tabBar高度
+let hw_tabBarH : CGFloat = (isiPhoneX ? 83 : 49)
+/// 获取安全高度
+let hw_safetyH : CGFloat = (isiPhoneX ? 34 : 0)
+/// 屏幕比例高度
+func HW_ProportionH(height:CGFloat) -> CGFloat {
+    return HW_ScreenW*height/375
 }
-/// 屏幕高
-func HWScreenH() -> CGFloat {
-    return UIScreen.main.bounds.size.height
-}
+
+
 // MARK: - 颜色相关
 func HWColor(r:CGFloat, g:CGFloat, b:CGFloat) -> UIColor {
     return UIColor.init(red: r/255.0, green: g/255.0, blue: b/255.0, alpha: 1)
@@ -94,29 +78,23 @@ func HWFontHighColor() -> UIColor { // 常用字体颜色 较浅
 }
 
 // MARK: - 解决图片渲染问题
-func HWImage(name:String) -> UIImage {
-    guard let image : UIImage = UIImage.init(named: name)?.withRenderingMode(.alwaysOriginal) else{
+func hw_Image(named:String) -> UIImage {
+    guard let image : UIImage = UIImage.init(named: named)?.withRenderingMode(.alwaysOriginal) else{
         return  UIImage()
     }
     return image
 }
-/// 是否是isiPhoneX
-func isiPhoneX() -> Bool {
-    if UIScreen.main.bounds.height == 812 {
-        return true
-    }
-    return false
-}
+
 
 /// 快速添加底部的蓝色view 使用方法addBgView(view: self.view)
 func addBgView(view : UIView){
-    let bgview = UIView.init(frame: CGRect.init(x: 0, y: 0, width: HWScreenW(), height: 90))
+    let bgview = UIView.init(frame: CGRect.init(x: 0, y: 0, width: HW_ScreenW, height: 90))
     bgview.backgroundColor = "29D8A5".hw_hexColor()
     view.addSubview(bgview)
     view.sendSubview(toBack: bgview) // 放到最底层
 }
 func addBgView(view : UIView, height:CGFloat)-> UIView{
-    let bgview = UIView.init(frame: CGRect.init(x: 0, y: 0, width: HWScreenW(), height: height))
+    let bgview = UIView.init(frame: CGRect.init(x: 0, y: 0, width: HW_ScreenW, height: height))
     bgview.backgroundColor = HWNavigationBarColor()
     view.addSubview(bgview)
     view.sendSubview(toBack: bgview) // 放到最底层
@@ -125,7 +103,7 @@ func addBgView(view : UIView, height:CGFloat)-> UIView{
 }
 /// 快速添加底部的view view:要添加在哪个view上 bgColoc:背景颜色 height:高度
 func addBgView(view : UIView, bgColoc : UIColor, height: CGFloat){
-    let bgview = UIView.init(frame: CGRect.init(x: 0, y: 0, width: HWScreenW(), height: height))
+    let bgview = UIView.init(frame: CGRect.init(x: 0, y: 0, width: HW_ScreenW, height: height))
     bgview.backgroundColor = bgColoc
     view.addSubview(bgview)
     view.sendSubview(toBack: bgview) // 放到最底层

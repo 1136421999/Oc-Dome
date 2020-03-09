@@ -9,10 +9,21 @@
 
 import UIKit
 
+
+
 extension UITextField {
     private struct RuntimeKey {
         static let hw_TextFieldKey = UnsafeRawPointer.init(bitPattern: "hw_TextField".hashValue)
         /// ...其他Key声明
+    }
+    /// 占位文字颜色
+    @IBInspectable public var placeholderColor: UIColor {
+        get {
+            return (value(forKeyPath: "_placeholderLabel.textColor") ?? UIColor.lightGray) as! UIColor
+        }
+        set {
+            setValue(newValue, forKeyPath: "_placeholderLabel.textColor")
+        }
     }
     /// 运行时关联
     var hw: hw_TextField {
@@ -28,7 +39,7 @@ extension UITextField {
             return obj!
         }
     }
-    
+
 }
 class hw_TextField: NSObject, UITextFieldDelegate{
     private weak var tf: UITextField? // 定义属性用于临时记录

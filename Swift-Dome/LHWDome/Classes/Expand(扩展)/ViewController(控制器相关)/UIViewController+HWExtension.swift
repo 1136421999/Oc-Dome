@@ -10,43 +10,55 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    
     // MARK: - 设置相关
     /// 快速设置背景颜色
-    func setBGColor(color:UIColor) {
-        view.backgroundColor = color
-    }
-    func setBGColor(_ colorHex:String? = nil) {
-        if colorHex == nil {
-            view.backgroundColor = HWBGColor()
+    ///
+    /// - Parameter color: 颜色/颜色16进制字符串(不传给定默认颜色)
+    func hw_setBgColor(_ color: Any? = nil) {
+        guard (color != nil) else {
+            view.backgroundColor = hw_BGColor
+            return
+        }
+        if color is UIColor {
+            view.backgroundColor = color as? UIColor
+        } else if color is String {
+            view.backgroundColor = (color as? String ?? "").hw_hexColor()
         } else {
-            view.backgroundColor = UIColor.hw_color(hex: colorHex!)
+            view.backgroundColor = hw_BGColor
         }
     }
     /// 快速设置title
-    func setTitle(title:String) {
+    func hw_setTitle(_ title:String) {
         navigationItem.title = title
     }
     /// 快速设置白色titleView
     func setTitleLabel(title:String) {
-        weak var weakSelf = self // 弱引用
         let label = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 44))
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textColor = UIColor.white
         label.text = title
         label.textAlignment = .center
-        weakSelf?.navigationItem.titleView = label
+        label.sizeToFit() // 自适应
+        self.navigationItem.titleView = label
     }
-    
-    // MARK: - 跳转相关
-    /// 快速push到指定控制器 name:控制器名
-    func pushController(name:String) {
-        pushSetController(name: name)
+}
+// MARK: - 跳转相关
+extension UIViewController {
+    /// 快速push到指定控制器
+    ///
+    /// - Parameter name: 控制器名/控制器
+    func hw_pushController(_ name: Any) {
+        if name is String {
+            pushSetController(name: name as! String)
+        } else if name is UIViewController {
+            navigationController?.pushViewController(name as! UIViewController, animated: true)
+        } else {
+            HWPrint("传入:\(name) 异常")
+        }
     }
     
     @discardableResult
-    func pushSetController(name:String) -> UIViewController {
-        weak var weakSelf = self // 弱引用
+    private func pushSetController(name:String) -> UIViewController {
         // 1.获取命名空间
         guard let clsName = Bundle.main.infoDictionary!["CFBundleExecutable"] else {
             //            HWPrint("命名空间不存在")
@@ -61,13 +73,29 @@ extension UIViewController {
         }
         // 3.通过Class创建对象
         let vc = clsType.init()
-        weakSelf!.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
         return vc
     }
     
+    /// 快速返回自定界面
+    ///
+    /// - Parameter name: 控制器名字符串/控制器(不传默认返回根控制器)
+    func hw_popToViewController(_ name:Any? = nil) {
+        guard name != nil else { // 不传直接放回根控制器
+            navigationController?.popToRootViewController(animated: true)
+            return
+        }
+        if name is String {
+            popToViewController(name: name as! String)
+        } else if name is UIViewController {
+            navigationController?.popToViewController(name as! UIViewController, animated: true)
+        } else {
+            HWPrint("传入:\(String(describing: name)) 异常")
+        }
+    }
+    
     /// 快速返回指定的控制器 name:要返回的控制器名 (注意:要返回的控制器必须在navigationController的子控制器数组中)
-    func popToViewController(name:String) { // 使用 self.popToViewController(name: "JYKMeViewController")
-        weak var weakSelf = self // 弱引用
+    private func popToViewController(name:String) { // 使用 self.popToViewController(name: "JYKMeViewController")
         // 1.获取命名空间
         guard let clsName = Bundle.main.infoDictionary!["CFBundleExecutable"] else {
             print("命名空间不存在")
@@ -80,23 +108,24 @@ extension UIViewController {
             print("无法转换成UIViewController")
             return
         }
-        for  controller in (weakSelf!.navigationController?.viewControllers)! {
+        for i in 0..<(self.navigationController?.viewControllers.count ?? 0) {
+            let controller = self.navigationController!.viewControllers[i]
             if controller.isKind(of: cls!) {
-                weakSelf!.navigationController?.popToViewController(controller, animated: true)
+                self.navigationController?.popToViewController(controller, animated: true)
+                break
             }
         }
     }
-    /// 快速返回根的控制器
-    func popToRootViewController() {
-        navigationController?.popToRootViewController(animated: true)
-    }
     
-    func presentController(name:String) {
+    /// 快速model到指定页面
+    ///
+    /// - Parameter name: 控制器名
+    func hw_presentController(_ name:String) {
         presentSetController(name: name, action: {})
     }
     /// 跳转xib并添加导航栏
     @discardableResult
-    func presentSetController(name:String, action:@escaping (()->())) -> UIViewController {
+    private func presentSetController(name:String, action:@escaping (()->())) -> UIViewController {
         // 1.获取命名空间
         guard let clsName = Bundle.main.infoDictionary!["CFBundleExecutable"] else {
             print("命名空间不存在")
@@ -117,7 +146,6 @@ extension UIViewController {
         })
         return vc
     }
-    
 }
 
 // MARK: - 清除导航栏分隔线
@@ -127,120 +155,21 @@ extension UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = false
     }
-    /// 切换渐变导航栏
-    func switchGradientColor() {
-        navigationController?.navigationBar.setBackgroundImage(HWGradientColor().hw_toImage(), for: UIBarMetrics.default)
+    /// 修改导航栏颜色
+    ///
+    /// - Parameter color: 需要修改的颜色
+    func hw_switchNavColor(_ color: UIColor) {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(color: color, size: UIScreen.main.bounds.size), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = false
-        
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
-        navigationController?.navigationBar.titleTextAttributes =  [NSAttributedStringKey.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.tintColor = UIColor.white //item 字体颜色
+        //                navigationController?.navigationBar.isTranslucent = true // 会觉得颜色很浅，因为这是半透明状态 iOS11 以下出现内容上偏
+        navigationController?.navigationBar.isTranslucent = false // 推荐关闭半透明状态 导航栏位置 相对布局以0开始
+        UIApplication.shared.statusBarStyle = color != UIColor.white ? .lightContent : .default
+        navigationController?.navigationBar.titleTextAttributes =  [NSAttributedString.Key.foregroundColor: color != UIColor.white ? UIColor.white : UIColor.black, NSAttributedString.Key.font: UIFont.systemFont(ofSize:18)]
+        navigationController?.navigationBar.tintColor = color != UIColor.white ? UIColor.white : UIColor.black //item 字体颜色
     }
-    func switchNavColor(_ color: UIColor) {
-        navigationController?.navigationBar.setBackgroundImage(color.hw_toImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = false
-        UIApplication.shared.statusBarStyle = color == UIColor.white ? UIStatusBarStyle.default : UIStatusBarStyle.lightContent
-        navigationController?.navigationBar.titleTextAttributes =  [NSAttributedStringKey.foregroundColor: color == UIColor.white ? UIColor.black :UIColor.white]
-        navigationController?.navigationBar.tintColor = color == UIColor.white ? UIColor.black :UIColor.white //item 字体颜色
-    }
-    /// 设置导航栏主要颜色
-    func switchNavMainColor() {
-        navigationController?.navigationBar.setBackgroundImage(HWNavigationBarColor().hw_toImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = false
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
-        navigationController?.navigationBar.titleTextAttributes =  [NSAttributedStringKey.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.tintColor = UIColor.white //item 字体颜色
-    }
-    /// 切换黑色航栏
-    func switchBlackColor() {
-        navigationController?.navigationBar.setBackgroundImage("24282B".hw_hexColor().hw_toImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
-        //        navigationController?.navigationBar.barTintColor = "ffffff".hexColor()
-        navigationController?.navigationBar.titleTextAttributes =  [NSAttributedStringKey.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.tintColor = UIColor.white //item 字体颜色
-        navigationController?.navigationBar.isTranslucent = false
-    }
-    /// 切换白色导航栏
-    func switchWhiteColor() {
-        navigationController?.navigationBar.setBackgroundImage(UIColor.white.hw_toImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = nil
-        navigationController?.navigationBar.tintColor = "333333".hw_hexColor()
-        //        navigationController?.navigationBar.isTranslucent = false
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
-        navigationController?.navigationBar.titleTextAttributes =  [NSAttributedStringKey.foregroundColor: "333333".hw_hexColor()]
-        navigationController?.navigationBar.tintColor = UIColor.black //item 字体颜色
-        navigationController?.navigationBar.isTranslucent = false
-    }
-    /// 切换透明导航栏
-    func switchClearColor() {
-        navigationController?.navigationBar.setBackgroundImage(UIColor.clear.hw_toImage(), for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        //        navigationController?.navigationBar.isTranslucent = false
-        
-        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
-        navigationController?.navigationBar.titleTextAttributes =  [NSAttributedStringKey.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.tintColor = UIColor.white //item 字体颜色
-        navigationController?.navigationBar.isTranslucent = true
-    }
-    
+
 }
 
-// MARK: - 系统返回按钮监听扩展相关
-/// 导航返回协议
-@objc protocol NavigationProtocol {
-    /// 导航将要返回方法
-    /// - Returns: true: 返回上一界面， false: 禁止返回
-    @objc optional func hw_navigationBackClick() -> Bool
-}
-extension UIViewController: NavigationProtocol {
-    /// 导航将要返回方法
-    /// - Returns: true: 返回上一界面， false: 禁止返回
-    func hw_navigationBackClick() -> Bool {
-        return true
-    }
-}
-extension UINavigationController: UINavigationBarDelegate, UIGestureRecognizerDelegate {
-    /// 返回按钮点击监听
-    public func navigationBar(_ navigationBar: UINavigationBar, shouldPop item: UINavigationItem) -> Bool {
-        if viewControllers.count < (navigationBar.items?.count)! {
-            return true
-        }
-        var shouldPop = false
-        let vc: UIViewController = topViewController!
-        if vc.responds(to: #selector(hw_navigationBackClick)) {
-            shouldPop = vc.hw_navigationBackClick()
-        }
-        if shouldPop {
-            DispatchQueue.main.async {
-                self.popViewController(animated: true)
-            }
-        } else {
-            for subview in navigationBar.subviews {
-                if 0.0 < subview.alpha && subview.alpha < 1.0 {
-                    UIView.animate(withDuration: 0.25) {
-                        subview.alpha = 1.0
-                    }
-                }
-            }
-        }
-        return false
-    }
-    // 手势返回监听
-    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if childViewControllers.count == 1 {
-            return false
-        } else {
-            if topViewController?.responds(to: #selector(hw_navigationBackClick)) != nil {
-                return topViewController!.hw_navigationBackClick()
-            }
-            return true
-        }
-    }
-}
 
 extension UIViewController {
     /// 加载Storyboard方法 

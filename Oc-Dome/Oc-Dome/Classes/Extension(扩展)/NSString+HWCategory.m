@@ -15,6 +15,7 @@
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
     [formatter setDateFormat:fomrdata];
+//    formatter.timeZone = [NSTimeZone systemTimeZone]; 
     // 毫秒值转化为秒
     NSDate* date = [NSDate dateWithTimeIntervalSince1970:[self integerValue]/ 1000.0];
     NSString* dateString = [formatter stringFromDate:date];
@@ -59,5 +60,8 @@
 }
 - (CGFloat)hw_getWidthWithFont:(CGFloat)font addMaxHeight:(CGFloat)maxHeight {
     return [self hw_getSizeWithFont:[UIFont systemFontOfSize:font] addMaxSize:CGSizeMake(MAXFLOAT, maxHeight)].width;
+}
+- (NSMutableAttributedString *)hw_toAttributed {
+    return [[NSMutableAttributedString alloc] initWithString:self];
 }
 @end
